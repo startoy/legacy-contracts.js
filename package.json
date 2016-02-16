@@ -11,7 +11,8 @@
     "bluebird": "^2.9.34",
     "crypto-js": "^3.1.4",
     "eris-db": "^0.14.1",
-    "utf8": "^2.1.1"
+    "utf8": "^2.1.1",
+    "web3": "^0.15.2"
   },
   "devDependencies": {
     "chai": "^2.1.1",
