@@ -9,3 +9,8 @@ deployment:
       - printf "$NPM_USERNAME\n$NPM_PASSWORD\n$NPM_EMAIL\n" | npm login
       - npm run publish
       - ./JSDoc/publish.sh
+  alpha:
+    branch: alpha
+    commands:
+      - printf "$NPM_USERNAME\n$NPM_PASSWORD\n$NPM_EMAIL\n" | npm login
+      - NPM_CONFIG_TAG=alpha npm run publish
