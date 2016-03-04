@@ -4,29 +4,36 @@ This library lets you create and interact with on-chain Solidity contracts from 
 
 ## Installation
 
+### General
+
 `npm install eris-contracts`
 
-**Note:**  Installation fails on AWS Ubuntu as of 2015-12-31 because Ubuntu ships with an outdated version of npm.  To install successfully on Ubuntu, please follow these steps:
+### AWS Ubuntu
+
+Installation fails on AWS Ubuntu as of 2015-12-31 because it has an outdated version of `npm`.  To upgrade `npm`, follow these steps:
 
 ```shell
 sudo apt-get update
 sudo apt-get install --yes git nodejs-legacy npm
 sudo npm install --global npm
 hash -r
-npm install eris-contracts
 ```
+
+### Windows
+
+Prerequisites:
+
+ * Git
+ * Node.js
+ * Python version 2 (not 3!)
+ * Visual Studio Community 2015 Edition
+  * Select `Custom`/`Programming Languages`/`Visual C++`.
+
+Set the environment variable `GYP_MSVS_VERSION` to `2015`.
 
 ### eris-db server
 
 You need a running [eris-db](https://github.com/eris-ltd/eris-db) server. `eris-db` is a server wrapper for [Tendermint](https://github.com/tendermint/tendermint), which is the actual blockchain-client.
-
-#### Native
-
-`eris-db` server is officially supported on Ubuntu `14.04`, `14.10` and `15.04`. Installation instructions can be found in its `README.md` file.
-
-#### Docker
-
-Docker is supported, but it is not recommended to build and run manually (see 'Eris cli' below).
 
 #### Eris cli
 
