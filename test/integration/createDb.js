@@ -9,7 +9,7 @@ Promise.promisifyAll(child_process);
 
 function exec(command) {
   return child_process.execAsync(command, {encoding: 'utf8'})
-    .spread(function (stdout) {
+    .then(function (stdout) {
       return stdout.trim();
     });
 }
@@ -21,7 +21,7 @@ module.exports = function () {
     hostname, stdout, port;
 
   return Promise.join(
-    exec('docker-machine ip'),
+    exec('docker-machine ip').catchReturn('localhost'),
 
     exec('\
       eris chains rm --data --force blockchain; \
@@ -38,8 +38,8 @@ module.exports = function () {
       try {
         port = /1337\/tcp:\[{0.0.0.0 (\d+)}\]/.exec(stdout)[1];
       } catch (exception) {
-        console.error("Unable to retrieve IP address of test chain.  Perhaps it's \
-    stopped; check its logs.");
+        console.error("Unable to retrieve IP address of test chain.  Perhaps \
+it's stopped; check its logs.");
 
         process.exit(1);
       }
