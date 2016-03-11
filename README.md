@@ -8,9 +8,9 @@ This library lets you create and interact with on-chain Solidity contracts from 
 
 `npm install eris-contracts`
 
-### AWS Ubuntu
+### Ubuntu 14.04 LTS
 
-Installation fails on AWS Ubuntu as of 2015-12-31 because it has an outdated version of `npm`.  To upgrade `npm`, follow these steps:
+Installation fails on Ubuntu 14.04 LTS because it has an outdated version of `npm`.  To upgrade `npm`, follow these steps:
 
 ```shell
 sudo apt-get update
