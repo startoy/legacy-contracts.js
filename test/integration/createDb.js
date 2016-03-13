@@ -2,10 +2,12 @@
 
 var
   child_process = require('child_process'),
+  fs = require('fs'),
   Promise = require('bluebird'),
   untildify = require('untildify');
 
 Promise.promisifyAll(child_process);
+Promise.promisifyAll(fs);
 
 function exec(command) {
   return child_process.execAsync(command, {encoding: 'utf8'})
@@ -14,41 +16,42 @@ function exec(command) {
     });
 }
 
-// Create a fresh chain for each integration test.  Return its IP address and
-// validator.
+// Create a fresh Eris DB server for each integration test.  Return its
+// hostname, port, and validator.
 module.exports = function () {
   var
-    hostname, stdout, port;
+    hostname, createDb, port, validator;
 
-  return Promise.join(
-    exec('docker-machine ip').catchReturn('localhost'),
+  hostname = exec('docker-machine ip').catchReturn('localhost');
 
-    exec('\
-      eris chains rm --data --force blockchain; \
-      \
-      [ -d ~/.eris/chains/blockchain ] || (eris services start keys \
-        && eris chains make blockchain --chain-type=simplechain) \
-      \
-      && eris chains new --dir=blockchain --api --publish blockchain \
-      && eris chains start blockchain \
-      && sleep 3 \
-      && eris chains inspect blockchain NetworkSettings.Ports'),
+  createDb = exec('\
+    eris chains rm --data --force blockchain; \
+    \
+    [ -d ~/.eris/chains/blockchain ] || (eris services start keys \
+      && eris chains make blockchain --chain-type=simplechain) \
+    \
+    && eris chains new --dir=blockchain --api --publish blockchain \
+    && eris chains start blockchain');
 
-    function (hostname, stdout) {
-      try {
-        port = /1337\/tcp:\[{0.0.0.0 (\d+)}\]/.exec(stdout)[1];
-      } catch (exception) {
-        console.error("Unable to retrieve IP address of test chain.  Perhaps \
-it's stopped; check its logs.");
+  port = createDb.delay(3000).then(function () {
+    return exec('eris chains inspect blockchain NetworkSettings.Ports')
+      .then(function (stdout) {
+        try {
+          return /1337\/tcp:\[{0.0.0.0 (\d+)}\]/.exec(stdout)[1];
+        } catch (exception) {
+          console.error("Unable to retrieve IP address of test Eris DB server.  \
+    Perhaps it's stopped; check its logs.");
 
-        process.exit(1);
-      }
+          process.exit(1);
+        }
+      });
+  });
 
-      console.log("Created Eris DB test server listening at " + hostname + ":"
-        + port + ".");
+  validator = createDb.delay(3000).then(function () {
+    return fs.readFileAsync(untildify(
+      '~/.eris/chains/blockchain/priv_validator.json'
+    ), 'utf8').then(JSON.parse);
+  });
 
-      return [hostname, port,
-        require(untildify('~/.eris/chains/blockchain/priv_validator.json'))
-      ];
-    });
+  return [hostname, port, validator];
 };

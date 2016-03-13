@@ -4,56 +4,72 @@ var
   assert = require('assert'),
   createDb = require('../createDb'),
   erisContracts = require('../../../'),
+  Promise = require('bluebird'),
   Solidity = require('solc');
 
-it("gets a string from Solidity properly", function (done) {
+describe("strings are encoded and decoded properly", function () {
   var
-    contract, compiled;
+    contract;
 
-  this.timeout(30 * 1000);
-
-  contract = 'contract x { \
-    function getString() constant returns (string) { \
-      return "hello"; \
-    } \
-    \
-    function setAndGetString(string s) constant returns (string) { \
-      return s; \
-    } \
-  }';
-
-  compiled = Solidity.compile(contract, 1).contracts.x; // 1 activates the optimiser
-
-  createDb().spread(function (hostname, port, validator) {
+  before(function (done) {
     var
-      dbUrl, accountData, contractManager, abi, bytecode, contractFactory;
+      dbPromises, source, compiled;
 
-    dbUrl = "http://" + hostname + ":" + port + "/rpc";
+    this.timeout(10 * 1000);
 
-    accountData = {
-      address: validator.address,
-      pubKey: validator.pub_key,
-      privKey: validator.priv_key
-    };
+    dbPromises = createDb();
 
-    contractManager = erisContracts.newContractManagerDev(dbUrl, accountData);
-    abi = JSON.parse(compiled.interface);
-    bytecode = compiled.bytecode;
-    contractFactory = contractManager.newContractFactory(abi);
+    source = 'contract strings { \
+      function getString() constant returns (string) { \
+        return "hello"; \
+      } \
+      \
+      function setAndGetString(string s) constant returns (string) { \
+        return s; \
+      } \
+    }';
 
-    contractFactory.new({data: bytecode}, function (error, contract) {
-      assert.ifError(error);
+    compiled = Solidity.compile(source).contracts.strings;
 
-      contract.getString(function (error, string) {
+    Promise.all(dbPromises).spread(function (hostname, port, validator) {
+      var
+        dbUrl, accountData, contractManager, abi, bytecode,
+        contractFactory;
+
+      dbUrl = "http://" + hostname + ":" + port + "/rpc";
+
+      accountData = {
+        address: validator.address,
+        pubKey: validator.pub_key,
+        privKey: validator.priv_key
+      };
+
+      contractManager = erisContracts.newContractManagerDev(dbUrl, accountData);
+      abi = JSON.parse(compiled.interface);
+      bytecode = compiled.bytecode;
+      contractFactory = contractManager.newContractFactory(abi);
+
+      contractFactory.new({data: bytecode}, function (error, newContract) {
         assert.ifError(error);
-        assert.equal(string, "hello");
-
-        contract.setAndGetString("hello", function (error, string) {
-          assert.ifError(error);
-          assert.equal(string, "hello");
-          done();
-        });
+        contract = newContract;
+        done();
       });
+    });
+  });
+
+  it("gets a string constant", function (done) {
+    contract.getString(function (error, string) {
+      assert.ifError(error);
+      assert.equal(string, "hello");
+      done();
+    });
+  });
+
+  it("sets and gets a string", function (done) {
+    contract.setAndGetString("hello", function (error, string) {
+      assert.ifError(error);
+      assert.equal(string, "hello");
+      done();
     });
   });
 });
