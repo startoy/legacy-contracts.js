@@ -3,7 +3,7 @@
   "version": "0.13.3",
   "scripts": {
     "doc": "jsdoc --configure JSDoc/conf.json --destination doc README.md lib",
-    "publish": "publish",
+    "publish": "bundle-dependencies update && publish",
     "test": "mocha"
   },
   "dependencies": {
@@ -15,6 +15,7 @@
     "utf8": "^2.1.1"
   },
   "devDependencies": {
+    "bundle-dependencies": "^1.0.2",
     "chai": "^2.1.1",
     "ink-docstrap": "~0.5.2",
     "jsdoc": "^3.4.0",
