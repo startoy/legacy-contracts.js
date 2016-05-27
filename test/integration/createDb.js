@@ -1,57 +1,65 @@
-'use strict';
+/*eslint-disable no-multi-str */
 
-var
-  child_process = require('child_process'),
-  fs = require('fs'),
-  Promise = require('bluebird'),
-  untildify = require('untildify');
+'use strict'
 
-Promise.promisifyAll(child_process);
-Promise.promisifyAll(fs);
+var child_process = require('child_process')
+var fs = require('fs')
+var PEG = require('pegjs')
+var Promise = require('bluebird')
+var R = require('ramda')
+var untildify = require('untildify')
+var url = require('url')
 
-function exec(command) {
-  return child_process.execAsync(command, {encoding: 'utf8'})
-    .then(function (stdout) {
-      return stdout.trim();
-    });
+var dockerMachineIp
+var parser
+
+Promise.promisifyAll(child_process)
+
+parser = PEG.buildParser(fs.readFileSync(__dirname + '/parser.pegjs',
+  'utf8'))
+
+// Memoize the Docker Machine IP lookup because of
+// https://github.com/docker/machine/issues/2612.
+dockerMachineIp = R.memoize(child_process.execAsync)
+
+// Return the URL for an Eris service on a running container.
+function serviceUrl (type, name, port) {
+  return Promise.join(
+    dockerMachineIp('docker-machine ip', {encoding: 'utf8'})
+      .catchReturn('localhost'),
+
+    child_process.execAsync('eris ' + type + ' inspect ' + name +
+      ' NetworkSettings.Ports', {encoding: 'utf8'}).then(function (stdout) {
+        return parser.parse(stdout)[port]
+      }),
+      function (hostname, port) {
+        return {
+          protocol: 'http:',
+          slashes: true,
+          hostname: hostname.trim(),
+          port: port
+        }
+      })
 }
 
-// Create a fresh Eris DB server for each integration test.  Return its
-// hostname, port, and validator.
-module.exports = function () {
-  var
-    hostname, createDb, port, validator;
+// Create a fresh chain for each integration test.  Return its URL and
+// validator.
+module.exports = function (protocol) {
+  child_process.execSync('eris chains rm --data --force blockchain; \
+    eris chains new --dir=blockchain --api --publish blockchain; \
+    sleep 3', {
+      encoding: 'utf8',
+      env: R.merge(process.env, {ERIS_PULL_APPROVE: true})
+    })
 
-  hostname = exec('docker-machine ip').catchReturn('localhost');
+  return serviceUrl('chains', 'blockchain', 1337)
+    .then(function (locator) {
+      if (protocol === 'WebSocket') {
+        locator.protocol = 'ws:'
+      }
 
-  createDb = exec('\
-    eris chains rm --data --force blockchain; \
-    \
-    [ -d ~/.eris/chains/blockchain ] || (eris services start keys \
-      && eris chains make blockchain --chain-type=simplechain) \
-    \
-    && eris chains new --dir=blockchain --api --publish blockchain \
-    && eris chains start blockchain');
-
-  port = createDb.delay(3000).then(function () {
-    return exec('eris chains inspect blockchain NetworkSettings.Ports')
-      .then(function (stdout) {
-        try {
-          return /1337\/tcp:\[{0.0.0.0 (\d+)}\]/.exec(stdout)[1];
-        } catch (exception) {
-          console.error("Unable to retrieve IP address of test Eris DB server.  \
-    Perhaps it's stopped; check its logs.");
-
-          process.exit(1);
-        }
-      });
-  });
-
-  validator = createDb.delay(3000).then(function () {
-    return fs.readFileAsync(untildify(
-      '~/.eris/chains/blockchain/priv_validator.json'
-    ), 'utf8').then(JSON.parse);
-  });
-
-  return [hostname, port, validator];
-};
+      return [url.format(locator) +
+      (protocol === 'WebSocket' ? '/socketrpc' : '/rpc'),
+        require(untildify('~/.eris/chains/blockchain/priv_validator.json'))]
+    })
+}
