@@ -5,7 +5,7 @@
     "doc": "jsdoc --configure JSDoc/conf.json --destination doc README.md lib",
     "publish": "bundle-dependencies update && publish",
     "unit": "istanbul cover _mocha -- --reporter mocha-circleci-reporter test/unit",
-    "integration": "mocha --reporter mocha-circleci-reporter test/integration/test/*",
+    "integration": "ERIS_PULL_APPROVE=true eris services start keys && ([ -d ~/.eris/chains/blockchain ] || eris chains make blockchain --chain-type=simplechain) && istanbul cover _mocha -- --reporter mocha-circleci-reporter test/integration/test/*",
     "test": "npm run unit && npm run integration"
   },
   "dependencies": {
