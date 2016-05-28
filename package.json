@@ -45,14 +45,14 @@
     "eris-db",
     "RPC"
   ],
-  "author": "AndreasEris",
-  "authors": [
-    {
-      "name": "Andreas Olofsson",
-      "email": "andreas@erisindustries.com",
-      "url": "http://erisindustries.com"
-    }
-  ],
+  "author": {
+    "name": "Andreas Olofsson",
+    "email": "andreas@erisindustries.com"
+  },
+  "maintainers": [{
+    "name": "David Braun",
+    "email": "David@ErisIndustries.com"
+  }],
   "license": "LGPL-3.0",
   "standard": {
     "globals": [
