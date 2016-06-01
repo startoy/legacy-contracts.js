@@ -13,20 +13,20 @@
     "bluebird": "^3.3.3",
     "crypto-js": "^3.1.4",
     "eris-db": "^0.15.0",
-    "solc": "^0.2.2-2",
+    "solc": "^0.3.4",
     "utf8": "^2.1.1"
   },
   "devDependencies": {
     "bundle-dependencies": "^1.0.2",
-    "chai": "^2.1.1",
-    "ink-docstrap": "~0.5.2",
+    "chai": "^3.5.0",
+    "ink-docstrap": "~1.2.1",
     "istanbul": "^0.4.3",
     "jsdoc": "^3.4.0",
     "mocha-circleci-reporter": "0.0.1",
     "pegjs": "^0.9.0",
-    "publish": "^0.5.0",
+    "publish": "^0.6.0",
     "ramda": "^0.21.0",
-    "untildify": "^2.1.0"
+    "untildify": "^3.0.2"
   },
   "repository": {
     "type": "git",
