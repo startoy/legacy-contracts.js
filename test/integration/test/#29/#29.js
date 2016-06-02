@@ -14,7 +14,7 @@ var  announceEvents = true;
 
 var sub = function(err, subObj){};
 
-var setup = function(done){
+var setup2 = function(done){
 
   createDb().spread(function (url, validator) {
     
@@ -31,6 +31,19 @@ var setup = function(done){
   })
 }
 
+var setup = function(done){
+
+  dbUrl = "localhost:1337";
+
+  accountData = {
+    address: PUTADDRESSHERE,
+    pubKey: PUTPUBKEYHERE,
+    privKey: PUTPRIVKEYHERE
+  };
+
+  contractManager = erisContracts.newContractManagerDev(dbUrl, accountData);
+  done()
+}
 
 var deploy = function(source, done){
   var compiled = Solidity.compile(source).contracts.GS_event;
