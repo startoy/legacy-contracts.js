@@ -26,6 +26,7 @@
     "pegjs": "^0.9.0",
     "publish": "^0.6.0",
     "ramda": "^0.21.0",
+    "sync-modules": "^0.1.0",
     "untildify": "^3.0.2"
   },
   "repository": {
@@ -49,10 +50,12 @@
     "name": "Andreas Olofsson",
     "email": "andreas@erisindustries.com"
   },
-  "maintainers": [{
-    "name": "David Braun",
-    "email": "David@ErisIndustries.com"
-  }],
+  "maintainers": [
+    {
+      "name": "David Braun",
+      "email": "David@ErisIndustries.com"
+    }
+  ],
   "license": "LGPL-3.0",
   "standard": {
     "globals": [
