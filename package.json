@@ -4,7 +4,7 @@
   "scripts": {
     "doc": "jsdoc --configure JSDoc/conf.json --destination doc README.md lib",
     "publish": "bundle-dependencies update && publish",
-    "test": "mocha test/integration"
+    "test": "mocha --reporter mocha-circleci-reporter test/integration"
   },
   "dependencies": {
     "bignumber.js": "debris/bignumber.js#master",
