@@ -77,8 +77,8 @@ const compile = source =>
   Solidity.compile(source, 1).contracts
 
 it('sets and gets a value from a contract', function () {
-  this.timeout(10 * 1000)
-  
+  this.timeout(60 * 1000)
+
   return Promise.all([newBlockchain('blockchain'), privateValidator()])
     .spread((erisDb, validator) => {
       const contractManager = erisContracts.newContractManagerDev(
