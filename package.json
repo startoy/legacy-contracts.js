@@ -29,6 +29,8 @@
     "pegjs": "^0.9.0",
     "publish": "^0.6.0",
     "ramda": "^0.21.0",
+    "request": "^2.75.0",
+    "request-promise": "^4.1.1",
     "sync-modules": "^0.1.0",
     "untildify": "^3.0.2",
     "ws": "^1.1.1"
