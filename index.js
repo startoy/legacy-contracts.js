@@ -23,25 +23,11 @@ exports.newContractManager = function(pipe){
  *
  * @param {string} erisdbURL - The url to the eris-db server. Usually (http://localhost:1337/rpc)
  * @param {string} accounts - Used to pass in a list of accounts. NOTE: This is for DEV ONLY. The keys are not protected.
- * @param {function(error, data)} [callback] - Callback is only needed if using a websocket client. If callback is not provided,
- * the object will be returned, otherwise it is passed as the data param in the (normal error-first) callback.
  */
-exports.newContractManagerDev = function(erisdbURL, accounts, callback){
+exports.newContractManagerDev = function(erisdbURL, accounts){
     edb = edbModule.createInstance(erisdbURL);
     var pipe = new DevPipe(edb, accounts);
-    var manager = contractsModule.newContractManager(pipe);
-
-    if(callback){
-        edb.start(function(error){
-            if(error){
-                callback(error);
-            } else {
-                callback(null, manager);
-            }
-        })
-    } else {
-        return manager;
-    }
+    return contractsModule.newContractManager(pipe);
 };
 
 /**
