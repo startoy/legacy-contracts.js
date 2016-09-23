@@ -47,7 +47,7 @@ const blockchainIsAvailable = (erisDb) =>
       (callback) => erisDb.blockchain().getChainId(callback)
     ),
     I.intervalAsyncIterator(100)
-  ).then(F.wrap(erisDb))
+  ).then(R.always(erisDb))
 
 const newBlockchain = (name) =>
   exec(`
