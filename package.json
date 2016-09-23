@@ -21,7 +21,7 @@
     "fairmont": "^1.1.6",
     "ink-docstrap": "~1.2.1",
     "istanbul": "^0.4.3",
-    "iteray": "^0.1.0",
+    "iteray": "^0.4.1",
     "jsdoc": "^3.4.0",
     "mocha": "^3.0.2",
     "mocha-circleci-reporter": "0.0.1",
