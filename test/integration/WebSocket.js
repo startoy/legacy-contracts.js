@@ -1,10 +1,8 @@
 'use strict'
 
 const assert = require('assert')
-const erisContracts = require('../..')
 const Promise = require('bluebird')
-const Solidity = require('solc')
-const test = require('eris-db/lib/test')
+const test = require('../../lib/test')
 
 const source = `
   contract SimpleStorage {
@@ -20,23 +18,11 @@ const source = `
   }
 `
 
-const compile = source =>
-  Solidity.compile(source, 1).contracts
-
 it('sets and gets a value from a contract', function () {
   this.timeout(60 * 1000)
 
-  return Promise.all([
-    test.newBlockchain('blockchain', {protocol: 'ws:'}),
-    test.privateValidator()
-  ]).spread((url, validator) => {
-    const contractManager = erisContracts.newContractManagerDev(url, {
-      address: validator.address,
-      pubKey: validator.pub_key,
-      privKey: validator.priv_key
-    })
-
-    const compiled = compile(source).SimpleStorage
+  return test.newContractManager('blockchain').then((contractManager) => {
+    const compiled = test.compile(source).SimpleStorage
     const abi = JSON.parse(compiled.interface)
     const bytecode = compiled.bytecode
     const contractFactory = contractManager.newContractFactory(abi)
