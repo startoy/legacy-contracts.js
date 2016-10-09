@@ -12,7 +12,8 @@
     "crypto-js": "^3.1.4",
     "eris-db": "eris-ltd/eris-db.js#beta",
     "ramda": "^0.21.0",
-    "utf8": "^2.1.1"
+    "utf8": "^2.1.1",
+    "web3": "^0.17.0-beta"
   },
   "devDependencies": {
     "bundle-dependencies": "^1.0.2",
