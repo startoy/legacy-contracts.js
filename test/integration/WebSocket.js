@@ -21,15 +21,8 @@ const source = `
 it('sets and gets a value from a contract', function () {
   this.timeout(60 * 1000)
 
-  return test.newContractManager('blockchain').then((contractManager) => {
-    const compiled = test.compile(source).SimpleStorage
-    const abi = JSON.parse(compiled.interface)
-    const bytecode = compiled.bytecode
-    const contractFactory = contractManager.newContractFactory(abi)
-
-    return Promise.fromCallback((callback) =>
-      contractFactory.new({data: bytecode}, callback)
-    ).then((contract) =>
+  return test.newContractManager('blockchain').then((manager) =>
+    test.compile(manager, source, 'SimpleStorage').then((contract) =>
       Promise.fromCallback((callback) =>
         contract.set(42, callback)
       ).then(() =>
@@ -40,5 +33,5 @@ it('sets and gets a value from a contract', function () {
     ).then((value) => {
       assert.equal(value, 42)
     })
-  })
+  )
 })
