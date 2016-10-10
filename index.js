@@ -24,8 +24,8 @@ exports.newContractManager = function(pipe){
  * @param {string} erisdbURL - The url to the eris-db server. Usually (http://localhost:1337/rpc)
  * @param {string} accounts - Used to pass in a list of accounts. NOTE: This is for DEV ONLY. The keys are not protected.
  */
-exports.newContractManagerDev = function(erisdbURL, accounts){
-    edb = edbModule.createInstance(erisdbURL);
+exports.newContractManagerDev = function(erisdbURL, accounts, options){
+    edb = edbModule.createInstance(erisdbURL, options);
     var pipe = new DevPipe(edb, accounts);
     return contractsModule.newContractManager(pipe);
 };
