@@ -24,7 +24,7 @@ hash -r
 Prerequisites:
 
  * Git
- * Node.js
+ * Node.js version 6 or higher
  * Python version 2 (not 3!)
  * Visual Studio Community 2015 Edition
   * Select `Custom`/`Programming Languages`/`Visual C++`.
