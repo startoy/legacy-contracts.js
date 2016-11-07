@@ -2,7 +2,7 @@
 
 const assert = require('assert')
 const Promise = require('bluebird')
-const test = require('../../lib/test')
+const test = require('../../../lib/test')
 
 const source = `
   contract SimpleStorage {
