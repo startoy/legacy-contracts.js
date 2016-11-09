@@ -21,7 +21,7 @@ it('listens to an event from a contract', function (done) {
   this.timeout(60 * 1000)
   const name = 'blockchain'
 
-  return Promise.all([
+  Promise.all([
     erisDbTest.newBlockchain(name, {protocol: 'http:'}),
     erisDbTest.privateValidator(name)
   ]).spread((url, validator) => {
@@ -45,7 +45,7 @@ it('listens to an event from a contract', function (done) {
       ).then((readOnlyContract) => {
         readOnlyContract.Event.once((error, event) => {
           if (error) {
-            throw error
+            done(error)
           } else {
             console.log('Received event', JSON.stringify(event, null, 2))
             done()
