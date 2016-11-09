@@ -4,6 +4,7 @@
   "scripts": {
     "doc": "jsdoc --configure JSDoc/conf.json --destination doc README.md lib",
     "publish": "bundle-dependencies update && publish",
+    "pretest": "eris chains make blockchain",
     "test": "mocha --reporter mocha-circleci-reporter test/integration"
   },
   "dependencies": {
