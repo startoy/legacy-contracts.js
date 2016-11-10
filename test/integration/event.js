@@ -1,5 +1,6 @@
 'use strict'
 
+const R = require('ramda')
 const test = require('../../lib/test')
 
 const source = `
@@ -17,15 +18,22 @@ it('listens to an event from a contract', function (done) {
 
   test.newContractManager('blockchain', {protocol: 'http:'}).then((manager) =>
     test.compile(manager, source, 'Contract').then((contract) => {
-      contract.Event.once((error, event) => {
+      let count = 0
+
+      contract.Event(R.identity, (error, event) => {
         if (error) {
           throw error
         } else {
           console.log('Received event', JSON.stringify(event, null, 2))
-          done()
+          count++
+
+          if (count === 2) {
+            done()
+          }
         }
       })
 
+      contract.emit()
       contract.emit()
     })
     .catch(done)
