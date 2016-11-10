@@ -8,12 +8,13 @@
     "test": "mocha --reporter mocha-circleci-reporter test/integration"
   },
   "dependencies": {
+    "@nodeguy/generic": "^2.0.0",
     "@nodeguy/type": "^0.1.0",
     "bignumber.js": "debris/bignumber.js#master",
     "bluebird": "^3.3.3",
     "crypto-js": "^3.1.4",
     "eris-db": "^0.15.2",
-    "iteray": "^0.5.0",
+    "iteray": "^0.5.1",
     "ramda": "^0.21.0",
     "utf8": "^2.1.1",
     "web3": "^0.16.0"
