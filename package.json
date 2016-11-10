@@ -1,6 +1,6 @@
 {
   "name": "eris-contracts",
-  "version": "0.15.2",
+  "version": "0.15.3",
   "scripts": {
     "doc": "jsdoc --configure JSDoc/conf.json --destination doc README.md lib",
     "publish": "bundle-dependencies update && publish",
