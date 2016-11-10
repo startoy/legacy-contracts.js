@@ -13,6 +13,7 @@
     "bluebird": "^3.3.3",
     "crypto-js": "^3.1.4",
     "eris-db": "^0.15.2",
+    "iteray": "^0.5.0",
     "ramda": "^0.21.0",
     "utf8": "^2.1.1",
     "web3": "^0.16.0"
@@ -21,7 +22,6 @@
     "bundle-dependencies": "^1.0.2",
     "ink-docstrap": "~1.2.1",
     "istanbul": "^0.4.3",
-    "iteray": "^0.5.0",
     "jsdoc": "^3.4.0",
     "mocha": "^3.0.2",
     "mocha-circleci-reporter": "0.0.1",
