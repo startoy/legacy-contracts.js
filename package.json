@@ -8,7 +8,7 @@
     "test": "mocha --reporter mocha-circleci-reporter test/integration"
   },
   "dependencies": {
-    "@nodeguy/generic": "^2.0.0",
+    "@nodeguy/generic": "^2.1.1",
     "@nodeguy/type": "^0.1.0",
     "bignumber.js": "debris/bignumber.js#master",
     "bluebird": "^3.3.3",
