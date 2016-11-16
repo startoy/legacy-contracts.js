@@ -17,7 +17,7 @@ const source = `
   }
 `
 
-it('listens to an event from a contract', function (done) {
+it('#38', function (done) {
   this.timeout(60 * 1000)
   const name = 'blockchain'
 

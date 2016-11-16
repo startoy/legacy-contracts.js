@@ -19,7 +19,7 @@ const source = `
   }
 `
 
-it('sets and gets a value from a contract', function () {
+it('#47', function () {
   this.timeout(60 * 1000)
 
   return test.newContractManager('blockchain', {protocol: 'http:'})
