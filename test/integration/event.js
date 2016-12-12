@@ -1,13 +1,16 @@
 'use strict'
 
+const assert = require('assert')
 const test = require('../../lib/test')
 
 const source = `
   contract Contract {
-      event Event();
+      event Event(
+          address from
+      );
 
       function emit() {
-          Event();
+          Event(msg.sender);
       }
   }
 `
@@ -33,6 +36,14 @@ it('listens to an event from a contract', function (done) {
             done(error)
           } else {
             console.log('Received event', JSON.stringify(event, null, 2))
+
+            try {
+              assert.equal(event.args.from.length, 40)
+            } catch (exception) {
+              subscription.stop()
+              done(exception)
+            }
+
             count++
 
             if (count === 2) {

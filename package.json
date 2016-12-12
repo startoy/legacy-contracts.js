@@ -17,7 +17,7 @@
     "iteray": "^0.5.1",
     "ramda": "^0.21.0",
     "utf8": "^2.1.1",
-    "web3": "^0.16.0"
+    "web3": "eris-ltd/web3.js#cdf7bec7417988f9587d808796eb2872e0a8df23"
   },
   "devDependencies": {
     "bundle-dependencies": "^1.0.2",

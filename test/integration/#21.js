@@ -2,7 +2,7 @@
 
 const assert = require('assert')
 const Promise = require('bluebird')
-const test = require('../../../lib/test')
+const test = require('../../lib/test')
 
 describe('issue #21', function () {
   let contract
@@ -30,20 +30,21 @@ describe('issue #21', function () {
       }
     `
 
-    return test.newContractManager('blockchain').then((manager) =>
-      test.compile(manager, source, 'c').then((compiledContract) => {
-        contract = compiledContract
-      })
-    )
+    return test.newContractManager('blockchain', {protocol: 'http:'})
+      .then((manager) =>
+        test.compile(manager, source, 'c').then((compiledContract) => {
+          contract = compiledContract
+        })
+      )
   })
 
   it('gets the static byte array decoded properly', function () {
     return Promise.fromCallback((callback) => contract.getBytes(callback))
       .then((bytes) => {
-        assert.deepEqual(bytes, [
-          '0x68', '0x65', '0x6C', '0x6C', '0x6F', '0x00', '0x00', '0x00',
-          '0x00', '0xFF'
-        ])
+        assert.deepEqual(
+          bytes,
+          ['68', '65', '6C', '6C', '6F', '00', '00', '00', '00', 'FF']
+        )
       })
   })
 
