@@ -1,6 +1,6 @@
 {
   "name": "eris-contracts",
-  "version": "0.15.7",
+  "version": "0.15.8",
   "dependencies": {
     "@nodeguy/generic": {
       "version": "2.1.1",
