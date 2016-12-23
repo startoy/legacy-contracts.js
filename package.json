@@ -29,8 +29,7 @@
     "publish": "0.6.0",
     "request": "2.75.0",
     "request-promise": "4.1.1",
-    "solc": "0.3.4",
-    "sync-modules": "0.1.0"
+    "solc": "0.3.4"
   },
   "repository": {
     "type": "git",
