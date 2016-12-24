@@ -23,7 +23,7 @@
     "bundle-dependencies": "1.0.2",
     "ink-docstrap": "1.2.1",
     "istanbul": "0.4.3",
-    "jsdoc": "3.4.0",
+    "jsdoc": "3.4.3",
     "mocha": "3.0.2",
     "mocha-circleci-reporter": "0.0.1",
     "publish": "0.6.0",
