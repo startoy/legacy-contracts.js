@@ -1,5 +1,6 @@
 {
   "name": "eris-contracts",
+  "description": "Library with javascript bindings for Solidity contracts.",
   "version": "0.15.8",
   "author": {
     "name": "Andreas Olofsson",
@@ -43,6 +44,7 @@
     "tendermint"
   ],
   "license": "LGPL-3.0",
+  "main": "index.js",
   "maintainers": [
     {
       "name": "David Braun",
