@@ -33,6 +33,9 @@
     "request-promise": "4.1.1",
     "solc": "0.3.4"
   },
+  "engines": {
+    "node": ">=6"
+  },
   "homepage": "https://github.com/eris-ltd/eris-contracts.js",
   "keywords": [
     "RPC",
