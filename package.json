@@ -1,11 +1,12 @@
 {
   "name": "eris-contracts",
   "version": "0.15.8",
-  "scripts": {
-    "doc": "jsdoc --configure JSDoc/conf.json --destination doc README.md lib",
-    "publish": "bundle-dependencies update && publish",
-    "pretest": "eris chains make blockchain",
-    "test": "mocha --reporter mocha-circleci-reporter test/integration"
+  "author": {
+    "name": "Andreas Olofsson",
+    "email": "andreas@erisindustries.com"
+  },
+  "bugs": {
+    "url": "https://github.com/eris-ltd/eris-contracts.js/issues"
   },
   "dependencies": {
     "@nodeguy/generic": "2.1.1",
@@ -31,34 +32,33 @@
     "request-promise": "4.1.1",
     "solc": "0.3.4"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/eris-ltd/eris-contracts.js"
-  },
   "homepage": "https://github.com/eris-ltd/eris-contracts.js",
-  "bugs": {
-    "url": "https://github.com/eris-ltd/eris-contracts.js/issues"
-  },
   "keywords": [
-    "eris",
-    "solidity",
-    "node.js",
+    "RPC",
     "dapp",
-    "tendermint",
+    "eris",
     "eris-db",
-    "RPC"
+    "node.js",
+    "solidity",
+    "tendermint"
   ],
-  "author": {
-    "name": "Andreas Olofsson",
-    "email": "andreas@erisindustries.com"
-  },
+  "license": "LGPL-3.0",
   "maintainers": [
     {
       "name": "David Braun",
       "email": "David@ErisIndustries.com"
     }
   ],
-  "license": "LGPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eris-ltd/eris-contracts.js"
+  },
+  "scripts": {
+    "doc": "jsdoc --configure JSDoc/conf.json --destination doc README.md lib",
+    "pretest": "eris chains make blockchain",
+    "publish": "bundle-dependencies update && publish",
+    "test": "mocha --reporter mocha-circleci-reporter test/integration"
+  },
   "standard": {
     "globals": [
       "after",
