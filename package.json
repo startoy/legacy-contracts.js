@@ -56,7 +56,7 @@
     "url": "https://github.com/eris-ltd/eris-contracts.js"
   },
   "scripts": {
-    "doc": "jsdoc --configure JSDoc/conf.json --destination doc README.md lib",
+    "doc": "jsdoc --configure JSDoc/conf.json --destination doc index.js lib README.md",
     "pretest": "eris chains make blockchain",
     "publish": "bundle-dependencies update && publish",
     "test": "mocha --reporter mocha-circleci-reporter test/integration"

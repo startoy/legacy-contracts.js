@@ -1,11 +1,15 @@
 #!/bin/sh
+set -o errexit
+set -o xtrace
 
 # Publish documentation to the Monax website.
 
 name=contracts.js
 repository=monax.io
-repo=$PWD
-version=$(jq --raw-output .version package.json)
+doc=$PWD/doc
+
+# Use only the major and minor version numbers.
+version=$(jq --raw-output .version package.json | cut -d . -f 1-2)
 
 # Build
 npm run doc
@@ -14,14 +18,14 @@ git clone git@github.com:eris-ltd/$repository.git
 cd $repository/content/docs/documentation
 mkdir --parents $name
 cd $name
-mv $repo/doc $version
+rm --force --recursive $version
+mv $doc $version
+rm --force latest
 ln --symbolic $version latest
 
-# Commit and push if there are changes.
-if [ -n "$(git status --porcelain)" ]; then
-  git config --global user.email "billings@erisindustries.com"
-  git config --global user.name "Billings the Bot"
-  git add -A :/ &&
-  git commit --message "$name build number $CIRCLE_BUILD_NUM doc generation" &&
-  git push origin staging
-fi
+# Commit and push.
+git config user.name "Billings the Bot"
+git config user.email "Billings@Monax.io"
+git add --all
+git commit --message "$name build number $CIRCLE_BUILD_NUM doc generation"
+git push origin staging
