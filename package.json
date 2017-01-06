@@ -38,20 +38,17 @@
   },
   "homepage": "https://github.com/eris-ltd/eris-contracts.js",
   "keywords": [
-    "RPC",
-    "dapp",
+    "Monax",
     "eris",
     "eris-db",
-    "node.js",
-    "solidity",
-    "tendermint"
+    "solidity"
   ],
   "license": "LGPL-3.0",
   "main": "index.js",
   "maintainers": [
     {
       "name": "David Braun",
-      "email": "David@ErisIndustries.com"
+      "email": "David@Monax.io"
     }
   ],
   "repository": {
