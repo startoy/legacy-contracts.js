@@ -1,7 +1,7 @@
 {
   "name": "eris-contracts",
   "description": "Library with javascript bindings for Solidity contracts.",
-  "version": "0.15.8",
+  "version": "0.15.9",
   "author": {
     "name": "Andreas Olofsson",
     "email": "andreas@erisindustries.com"
