@@ -25,10 +25,6 @@ update it using [NodeSource's distribution](https://github.com/nodesource/distri
 $ npm install eris-contracts
 ```
 
-#### Yarn Warning
-
-We don't recommend installing the library using [Yarn](https://yarnpkg.com/) because [it ignores the `npm-shrinkwrap.json` file](https://github.com/yarnpkg/yarn/issues/838) and may install different versions of dependencies than the ones we've tested.
-
 ### eris-db server
 
 You need a running [eris-db](https://github.com/eris-ltd/eris-db) server. `eris-db` is a server wrapper for [Tendermint](https://github.com/tendermint/tendermint), which is the actual blockchain-client.
