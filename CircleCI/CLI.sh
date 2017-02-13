@@ -1,5 +1,5 @@
 #!/bin/sh
-
+set -o errexit
 set -o xtrace
 
 # Install the Eris CLI.
@@ -10,9 +10,9 @@ if [ $CIRCLE_BRANCH = 'master' ]; then
   sudo apt-get --quiet update
   sudo apt-get install --assume-yes --quiet eris
 else
-  go get github.com/eris-ltd/eris-cli/cmd/eris
-  cd $HOME/.go_workspace/src/github.com/eris-ltd/eris-cli/cmd/eris
-  git checkout develop
+  go get github.com/eris-ltd/eris/cmd/eris
+  cd $HOME/.go_workspace/src/github.com/eris-ltd/eris/cmd/eris
+  git checkout $CIRCLE_BRANCH
   go install
 fi
 
