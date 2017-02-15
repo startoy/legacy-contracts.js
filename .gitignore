@@ -1,3 +1,4 @@
+.vagrant
 coverage
 doc
 node_modules/
