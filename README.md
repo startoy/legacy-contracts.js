@@ -520,6 +520,10 @@ To test Eris DB against pre-recorded vectors without exercising the library:
 TEST=server npm test
 ```
 
+## Debugging
+
+Debugging information will display on `stderr` if the library is run with `NODE_DEBUG=eris` in the environment.
+
 ## Web3 licence
 
 This library is built on [web3.js](https://github.com/ethereum/web3.js). Here is the web3.js licence:
