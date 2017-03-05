@@ -494,9 +494,31 @@ In `eris-contracts` you do not use watches and filters, but events. See the even
 
 Transacting and calling is done via the javascript contract objects, but the mechanics is slightly different. Ethereum keeps the accounts in the client, while our client (Tendermint) expects the account info, such as private keys or pre-signed transactions, to be provided by the caller. See the section on `pipes` for more info.
 
-## Tests
+## Testing
 
-`mocha` or `npm test`
+To test the library against pre-recorded vectors:
+
+```
+npm test
+```
+
+To make a blockchain for testing:
+
+```
+npm run make
+```
+
+To test the library against Eris DB while recording vectors:
+
+```
+TEST=record npm test
+```
+
+To test Eris DB against pre-recorded vectors without exercising the library:
+
+```
+TEST=server npm test
+```
 
 ## Web3 licence
 

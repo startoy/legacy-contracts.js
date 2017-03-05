@@ -15,11 +15,11 @@
     "bignumber.js": "debris/bignumber.js#94d7146671b9719e00a09c29b01a691bc85048c2",
     "bluebird": "3.3.3",
     "crypto-js": "3.1.4",
-    "eris-db": "0.15.9",
+    "eris-db": "eris-ltd/eris-db.js#c8486e958d73f2f617eced64b630a3797706e17d",
     "iteray": "0.5.1",
     "ramda": "0.21.0",
     "utf8": "2.1.1",
-    "web3": "eris-ltd/web3.js#cdf7bec7417988f9587d808796eb2872e0a8df23"
+    "web3": "eris-ltd/web3.js#aa280b4e3d3ab35507d833dab0b841410f5e4f1d"
   },
   "devDependencies": {
     "bundle-dependencies": "1.0.2",
@@ -31,7 +31,8 @@
     "publish": "0.6.0",
     "request": "2.75.0",
     "request-promise": "4.1.1",
-    "solc": "0.3.4"
+    "solc": "0.3.4",
+    "test-vector": "0.1.0"
   },
   "engines": {
     "node": ">=6"
@@ -57,9 +58,9 @@
   },
   "scripts": {
     "doc": "jsdoc --configure JSDoc/conf.json --destination doc index.js lib README.md",
-    "pretest": "eris chains make blockchain",
+    "make": "eris chains make blockchain",
     "publish": "bundle-dependencies update && publish",
-    "test": "mocha --reporter mocha-circleci-reporter test/integration"
+    "test": "mocha --recursive --reporter mocha-circleci-reporter"
   },
   "standard": {
     "globals": [

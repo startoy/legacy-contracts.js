@@ -4,19 +4,15 @@ const assert = require('assert')
 const Promise = require('bluebird')
 const test = require('../../lib/test')
 
+const vector = test.Vector()
+
 describe('#45', function () {
-  let manager
+  before(vector.before(__dirname, {protocol: 'http:'}))
+  after(vector.after())
 
-  this.timeout(60 * 1000)
+  it('nottherealbatman', vector.it(function (manager) {
+    this.timeout(10 * 1000)
 
-  before(function () {
-    return test.newContractManager('blockchain', {protocol: 'http:'})
-      .then((contractManager) => {
-        manager = contractManager
-      })
-  })
-
-  it('nottherealbatman', function () {
     const source = `
       contract Test {
 
@@ -47,9 +43,11 @@ describe('#45', function () {
     ).then((value) => {
       assert.equal(value, 'Batman')
     })
-  })
+  }))
 
-  it('rguikers', function () {
+  it('rguikers', vector.it(function (manager) {
+    this.timeout(10 * 1000)
+
     const source = `
       contract Test {
 
@@ -77,5 +75,5 @@ describe('#45', function () {
         assert.equal(number, 100)
       })
     )
-  })
+  }))
 })

@@ -25,7 +25,7 @@ test:
     - docker-machine create --driver digitalocean default
     - eval $(docker-machine env default); ERIS_PULL_APPROVE=true eris init
   override:
-    - eval $(docker-machine env default); npm test
+    - eval $(docker-machine env default); ./CircleCI/test.sh
   post:
     - docker-machine rm -y default
 

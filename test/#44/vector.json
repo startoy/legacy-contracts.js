@@ -1,0 +1,130 @@
+{
+  "it": {
+    "#44": [
+      {
+        "input": {
+          "done": false,
+          "value": {
+            "method": "erisdb.transactAndHold",
+            "params": {
+              "priv_key": "86F527B157FF098AC6BEDC38B0478A3099E03F4E55D46429DD365A359706557916137A2137316939F502F2BE428B8A9802EA9A0A0C4A960580D128EDC24E5B4A",
+              "address": "",
+              "data": "6060604052606c8060106000396000f3606060405260e060020a60003504632801617e811460245780636d4ce63c146049575b005b6000805473ffffffffffffffffffffffffffffffffffffffff19166004351790556022565b60005473ffffffffffffffffffffffffffffffffffffffff166060908152602090f3",
+              "gas_limit": 1000000,
+              "fee": 0
+            },
+            "jsonrpc": "2.0",
+            "id": "1"
+          }
+        }
+      },
+      {
+        "output": {
+          "done": false,
+          "value": {
+            "result": {
+              "call_data": {
+                "caller": "E9978233F1DF5CBD52269B933D42E6203F2D5D71",
+                "callee": "CCB6ECAA61B9DF029DE3FB1F1614793D6CE393B7",
+                "data": "6060604052606C8060106000396000F3606060405260E060020A60003504632801617E811460245780636D4CE63C146049575B005B6000805473FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF19166004351790556022565B60005473FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF166060908152602090F3",
+                "value": 1,
+                "gas": 999985
+              },
+              "origin": "E9978233F1DF5CBD52269B933D42E6203F2D5D71",
+              "tx_id": "E157B4A9558C20C9CA2AED0ED06D79A817FBD480",
+              "return": "606060405260E060020A60003504632801617E811460245780636D4CE63C146049575B005B6000805473FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF19166004351790556022565B60005473FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF166060908152602090F3",
+              "exception": ""
+            },
+            "error": null,
+            "id": "1",
+            "jsonrpc": "2.0"
+          }
+        }
+      },
+      {
+        "input": {
+          "done": false,
+          "value": {
+            "method": "erisdb.transactAndHold",
+            "params": {
+              "priv_key": "86F527B157FF098AC6BEDC38B0478A3099E03F4E55D46429DD365A359706557916137A2137316939F502F2BE428B8A9802EA9A0A0C4A960580D128EDC24E5B4A",
+              "address": "CCB6ECAA61B9DF029DE3FB1F1614793D6CE393B7",
+              "data": "2801617e00000000000000000000000088977a37d05a4fe86d09e88c88a49c2fcf7d6d8f",
+              "gas_limit": 1000000,
+              "fee": 0
+            },
+            "jsonrpc": "2.0",
+            "id": "2"
+          }
+        }
+      },
+      {
+        "output": {
+          "done": false,
+          "value": {
+            "result": {
+              "call_data": {
+                "caller": "E9978233F1DF5CBD52269B933D42E6203F2D5D71",
+                "callee": "CCB6ECAA61B9DF029DE3FB1F1614793D6CE393B7",
+                "data": "2801617E00000000000000000000000088977A37D05A4FE86D09E88C88A49C2FCF7D6D8F",
+                "value": 1,
+                "gas": 999953
+              },
+              "origin": "E9978233F1DF5CBD52269B933D42E6203F2D5D71",
+              "tx_id": "0AA76FFDEB1897F51D84D1961493B5A0A088BCCE",
+              "return": "",
+              "exception": ""
+            },
+            "error": null,
+            "id": "2",
+            "jsonrpc": "2.0"
+          }
+        }
+      },
+      {
+        "input": {
+          "done": false,
+          "value": {
+            "method": "erisdb.call",
+            "params": {
+              "from": "E9978233F1DF5CBD52269B933D42E6203F2D5D71",
+              "address": "CCB6ECAA61B9DF029DE3FB1F1614793D6CE393B7",
+              "data": "6d4ce63c"
+            },
+            "jsonrpc": "2.0",
+            "id": "3"
+          }
+        }
+      },
+      {
+        "output": {
+          "done": false,
+          "value": {
+            "result": {
+              "return": "00000000000000000000000088977a37d05a4fe86d09e88c88a49c2fcf7d6d8f",
+              "gas_used": 50
+            },
+            "error": null,
+            "id": "3",
+            "jsonrpc": "2.0"
+          }
+        }
+      }
+    ]
+  },
+  "validator": {
+    "address": "E9978233F1DF5CBD52269B933D42E6203F2D5D71",
+    "pub_key": [
+      1,
+      "16137A2137316939F502F2BE428B8A9802EA9A0A0C4A960580D128EDC24E5B4A"
+    ],
+    "priv_key": [
+      1,
+      "86F527B157FF098AC6BEDC38B0478A3099E03F4E55D46429DD365A359706557916137A2137316939F502F2BE428B8A9802EA9A0A0C4A960580D128EDC24E5B4A"
+    ],
+    "last_height": 0,
+    "last_round": 0,
+    "last_step": 0
+  },
+  "before": []
+}

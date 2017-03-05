@@ -1,0 +1,101 @@
+{
+  "it": {
+    "#48": [
+      {
+        "input": {
+          "done": false,
+          "value": {
+            "method": "erisdb.transactAndHold",
+            "params": {
+              "priv_key": "86F527B157FF098AC6BEDC38B0478A3099E03F4E55D46429DD365A359706557916137A2137316939F502F2BE428B8A9802EA9A0A0C4A960580D128EDC24E5B4A",
+              "address": "",
+              "data": "6060604052608d8060106000396000f3606060405260e060020a600035046338cc48318114602e578063c4b0fbb1146035578063f2c9ecd814605b575b005b6063305b90565b606430606091825273ffffffffffffffffffffffffffffffffffffffff16608052604090f35b608360646032565b73ffffffffffffffffffffffffffffffffffffffff166060908152602090f35b6060908152602090f3",
+              "gas_limit": 1000000,
+              "fee": 0
+            },
+            "jsonrpc": "2.0",
+            "id": "1"
+          }
+        }
+      },
+      {
+        "output": {
+          "done": false,
+          "value": {
+            "result": {
+              "call_data": {
+                "caller": "E9978233F1DF5CBD52269B933D42E6203F2D5D71",
+                "callee": "CCB6ECAA61B9DF029DE3FB1F1614793D6CE393B7",
+                "data": "6060604052608D8060106000396000F3606060405260E060020A600035046338CC48318114602E578063C4B0FBB1146035578063F2C9ECD814605B575B005B6063305B90565B606430606091825273FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF16608052604090F35B608360646032565B73FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF166060908152602090F35B6060908152602090F3",
+                "value": 1,
+                "gas": 999985
+              },
+              "origin": "E9978233F1DF5CBD52269B933D42E6203F2D5D71",
+              "tx_id": "F1C3328BEED6C2EFCDCC0F4ED24A394E1E18D5B4",
+              "return": "606060405260E060020A600035046338CC48318114602E578063C4B0FBB1146035578063F2C9ECD814605B575B005B6063305B90565B606430606091825273FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF16608052604090F35B608360646032565B73FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF166060908152602090F35B6060908152602090F3",
+              "exception": ""
+            },
+            "error": null,
+            "id": "1",
+            "jsonrpc": "2.0"
+          }
+        }
+      },
+      {
+        "input": {
+          "done": false,
+          "value": {
+            "method": "erisdb.transactAndHold",
+            "params": {
+              "priv_key": "86F527B157FF098AC6BEDC38B0478A3099E03F4E55D46429DD365A359706557916137A2137316939F502F2BE428B8A9802EA9A0A0C4A960580D128EDC24E5B4A",
+              "address": "CCB6ECAA61B9DF029DE3FB1F1614793D6CE393B7",
+              "data": "c4b0fbb1",
+              "gas_limit": 1000000,
+              "fee": 0
+            },
+            "jsonrpc": "2.0",
+            "id": "2"
+          }
+        }
+      },
+      {
+        "output": {
+          "done": false,
+          "value": {
+            "result": {
+              "call_data": {
+                "caller": "E9978233F1DF5CBD52269B933D42E6203F2D5D71",
+                "callee": "CCB6ECAA61B9DF029DE3FB1F1614793D6CE393B7",
+                "data": "C4B0FBB1",
+                "value": 1,
+                "gas": 999948
+              },
+              "origin": "E9978233F1DF5CBD52269B933D42E6203F2D5D71",
+              "tx_id": "720A6DBE2E1024AE99DF5810583EF5666089292D",
+              "return": "0000000000000000000000000000000000000000000000000000000000000064000000000000000000000000CCB6ECAA61B9DF029DE3FB1F1614793D6CE393B7",
+              "exception": ""
+            },
+            "error": null,
+            "id": "2",
+            "jsonrpc": "2.0"
+          }
+        }
+      }
+    ]
+  },
+  "validator": {
+    "address": "E9978233F1DF5CBD52269B933D42E6203F2D5D71",
+    "pub_key": [
+      1,
+      "16137A2137316939F502F2BE428B8A9802EA9A0A0C4A960580D128EDC24E5B4A"
+    ],
+    "priv_key": [
+      1,
+      "86F527B157FF098AC6BEDC38B0478A3099E03F4E55D46429DD365A359706557916137A2137316939F502F2BE428B8A9802EA9A0A0C4A960580D128EDC24E5B4A"
+    ],
+    "last_height": 0,
+    "last_round": 0,
+    "last_step": 0
+  },
+  "before": []
+}

@@ -1,0 +1,130 @@
+{
+  "it": {
+    "#50": [
+      {
+        "input": {
+          "done": false,
+          "value": {
+            "method": "erisdb.transactAndHold",
+            "params": {
+              "priv_key": "86F527B157FF098AC6BEDC38B0478A3099E03F4E55D46429DD365A359706557916137A2137316939F502F2BE428B8A9802EA9A0A0C4A960580D128EDC24E5B4A",
+              "address": "",
+              "data": "6060604052603b8060106000396000f3606060405260e060020a600035046360fe47b1811460245780636d4ce63c14602e575b005b6004356000556022565b6000546060908152602090f3",
+              "gas_limit": 1000000,
+              "fee": 0
+            },
+            "jsonrpc": "2.0",
+            "id": "1"
+          }
+        }
+      },
+      {
+        "output": {
+          "done": false,
+          "value": {
+            "result": {
+              "call_data": {
+                "caller": "E9978233F1DF5CBD52269B933D42E6203F2D5D71",
+                "callee": "CCB6ECAA61B9DF029DE3FB1F1614793D6CE393B7",
+                "data": "6060604052603B8060106000396000F3606060405260E060020A600035046360FE47B1811460245780636D4CE63C14602E575B005B6004356000556022565B6000546060908152602090F3",
+                "value": 1,
+                "gas": 999985
+              },
+              "origin": "E9978233F1DF5CBD52269B933D42E6203F2D5D71",
+              "tx_id": "B8B1CB8F3E18F68A8C775CD4494457E8EA6BE06A",
+              "return": "606060405260E060020A600035046360FE47B1811460245780636D4CE63C14602E575B005B6004356000556022565B6000546060908152602090F3",
+              "exception": ""
+            },
+            "error": null,
+            "id": "1",
+            "jsonrpc": "2.0"
+          }
+        }
+      },
+      {
+        "input": {
+          "done": false,
+          "value": {
+            "method": "erisdb.transactAndHold",
+            "params": {
+              "priv_key": "86F527B157FF098AC6BEDC38B0478A3099E03F4E55D46429DD365A359706557916137A2137316939F502F2BE428B8A9802EA9A0A0C4A960580D128EDC24E5B4A",
+              "address": "CCB6ECAA61B9DF029DE3FB1F1614793D6CE393B7",
+              "data": "60fe47b1000000000000000000000000000000000000000000000000000000000000002a",
+              "gas_limit": 1000000,
+              "fee": 0
+            },
+            "jsonrpc": "2.0",
+            "id": "2"
+          }
+        }
+      },
+      {
+        "output": {
+          "done": false,
+          "value": {
+            "result": {
+              "call_data": {
+                "caller": "E9978233F1DF5CBD52269B933D42E6203F2D5D71",
+                "callee": "CCB6ECAA61B9DF029DE3FB1F1614793D6CE393B7",
+                "data": "60FE47B1000000000000000000000000000000000000000000000000000000000000002A",
+                "value": 1,
+                "gas": 999967
+              },
+              "origin": "E9978233F1DF5CBD52269B933D42E6203F2D5D71",
+              "tx_id": "D6B0AC522A6B758BB2E94F7E4AB600842079D467",
+              "return": "",
+              "exception": ""
+            },
+            "error": null,
+            "id": "2",
+            "jsonrpc": "2.0"
+          }
+        }
+      },
+      {
+        "input": {
+          "done": false,
+          "value": {
+            "method": "erisdb.call",
+            "params": {
+              "from": "E9978233F1DF5CBD52269B933D42E6203F2D5D71",
+              "address": "CCB6ECAA61B9DF029DE3FB1F1614793D6CE393B7",
+              "data": "6d4ce63c"
+            },
+            "jsonrpc": "2.0",
+            "id": "3"
+          }
+        }
+      },
+      {
+        "output": {
+          "done": false,
+          "value": {
+            "result": {
+              "return": "000000000000000000000000000000000000000000000000000000000000002a",
+              "gas_used": 46
+            },
+            "error": null,
+            "id": "3",
+            "jsonrpc": "2.0"
+          }
+        }
+      }
+    ]
+  },
+  "validator": {
+    "address": "E9978233F1DF5CBD52269B933D42E6203F2D5D71",
+    "pub_key": [
+      1,
+      "16137A2137316939F502F2BE428B8A9802EA9A0A0C4A960580D128EDC24E5B4A"
+    ],
+    "priv_key": [
+      1,
+      "86F527B157FF098AC6BEDC38B0478A3099E03F4E55D46429DD365A359706557916137A2137316939F502F2BE428B8A9802EA9A0A0C4A960580D128EDC24E5B4A"
+    ],
+    "last_height": 0,
+    "last_round": 0,
+    "last_step": 0
+  },
+  "before": []
+}

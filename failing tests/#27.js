@@ -13,7 +13,7 @@ const source = `
   }
 `
 
-it('tests issue #27', function () {
+it('tests eris-db.js issue #27', function () {
   this.timeout(60 * 1000)
 
   return test.newContractManager('blockchain').then((manager) =>
