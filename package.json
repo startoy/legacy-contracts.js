@@ -58,7 +58,6 @@
   },
   "scripts": {
     "doc": "jsdoc --configure JSDoc/conf.json --destination doc index.js lib README.md",
-    "make": "eris chains make blockchain",
     "publish": "bundle-dependencies update && publish",
     "test": "mocha --recursive --reporter mocha-circleci-reporter"
   },
