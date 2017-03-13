@@ -19,6 +19,7 @@
     "g-functions": "nodeguy/g-functions#c76c9ed92967c08a0abd980e96ea2593b2041d4d",
     "iteray": "0.5.1",
     "ramda": "0.23.0",
+    "solc": "0.4.9",
     "utf8": "2.1.2",
     "web3": "eris-ltd/web3.js#aa280b4e3d3ab35507d833dab0b841410f5e4f1d"
   },
