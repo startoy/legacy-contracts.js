@@ -40,8 +40,6 @@ it('listens to an event from a contract', vector.it(function (manager) {
           if (error) {
             reject(error)
           } else {
-            console.log('Received event', JSON.stringify(event, null, 2))
-
             try {
               assert.equal(event.args.from.length, 40)
             } catch (exception) {
