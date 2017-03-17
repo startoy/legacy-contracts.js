@@ -15,19 +15,19 @@ it('#46', vector.it(function (manager) {
   const source = `
     contract Test{
 
-    	string _name;
+      string _name;
 
-    	function setName(string newname) {
-    		_name = newname;
-    	}
+      function setName(string newname) {
+        _name = newname;
+      }
 
-    	function getNameConstant() constant returns (string) {
-    		return _name;
-    	}
+      function getNameConstant() constant returns (string) {
+        return _name;
+      }
 
-    	function getName() returns (string) {
-    		return _name;
-    	}
+      function getName() returns (string) {
+        return _name;
+      }
     }
   `
 

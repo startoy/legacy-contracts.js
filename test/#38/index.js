@@ -1,10 +1,7 @@
 'use strict'
 
-const erisContracts = require('../..')
-const I = require('iteray')
 const Promise = require('bluebird')
 const Solidity = require('solc')
-const erisDbTest = require('eris-db/lib/test')
 const test = require('../../lib/test')
 
 const vector = test.Vector()

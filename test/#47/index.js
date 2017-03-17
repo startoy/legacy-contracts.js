@@ -14,16 +14,16 @@ it('#47', vector.it(function (manager) {
 
   const source = `
     contract Test{
-    	string _withSpace = "  Pieter";
-    	string _withoutSpace = "Pieter";
+      string _withSpace = "  Pieter";
+      string _withoutSpace = "Pieter";
 
-    	function getWithSpaceConstant() constant returns (string) {
-    		return _withSpace;
-    	}
+      function getWithSpaceConstant() constant returns (string) {
+        return _withSpace;
+      }
 
-    	function getWithoutSpaceConstant () constant returns (string) {
-    		return _withoutSpace;
-    	}
+      function getWithoutSpaceConstant () constant returns (string) {
+        return _withoutSpace;
+      }
     }
   `
 
