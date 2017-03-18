@@ -7,13 +7,13 @@
           "value": {
             "method": "erisdb.transactAndHold",
             "params": {
-              "priv_key": "50F4B08E1808256F74CAE5690206B2C98A65EEA3F6EE007BE3A4DD9E98DAB099DD42C7CF2BDD85ECD44C6C88328CAC4588B7B7A1A3CE6334750DC9D98919B63E",
+              "priv_key": "AA7800EE1EBF2AD4127BB5CFCDC6ABBD3A005E357070FD8858F611AA2293807EDA0845B288BA544EBD95C3E3AB4B0DBA914A16C572174101C17B5873AFD00DDC",
               "address": "",
               "data": "606060405260448060106000396000f3606060405260e060020a60003504633bdab8bf8114601a575b005b60187f57050ab73f6b9ebdd9f76b8d4997793f48cf956e965ee070551b9ca0bb71584e60006060a156",
               "gas_limit": 1000000,
               "fee": 0
             },
-            "id": "alpccyuhRdteET98/Tz1j3nwJa9UsqMROUnGLHVbFeI=",
+            "id": "wXFWFXaOQC2zmM1cwx3+2l1hZ+SicXjF0qFkLLjIC1k=",
             "jsonrpc": "2.0"
           }
         }
@@ -24,19 +24,19 @@
           "value": {
             "result": {
               "call_data": {
-                "caller": "C8BD5966B127AA8D84CA00B6E3FFCFE671ED4540",
-                "callee": "7EEC29E8914F55F08524BFB098E5EE8D6E339F8F",
+                "caller": "E31A431B158888A8C3A5E0E9EFE801EDC2B4432B",
+                "callee": "6CCF8406B21EC28F134E0E995B099D6F62F45AEF",
                 "data": "606060405260448060106000396000F3606060405260E060020A60003504633BDAB8BF8114601A575B005B60187F57050AB73F6B9EBDD9F76B8D4997793F48CF956E965EE070551B9CA0BB71584E60006060A156",
                 "value": 1,
                 "gas": 999985
               },
-              "origin": "C8BD5966B127AA8D84CA00B6E3FFCFE671ED4540",
-              "tx_id": "D7020258D05BA68CF7D257B6DFECE4865D0D7E9C",
+              "origin": "E31A431B158888A8C3A5E0E9EFE801EDC2B4432B",
+              "tx_id": "19C98D59B20800E7A0B42B78C1D56BDF11DD43C2",
               "return": "606060405260E060020A60003504633BDAB8BF8114601A575B005B60187F57050AB73F6B9EBDD9F76B8D4997793F48CF956E965EE070551B9CA0BB71584E60006060A156",
               "exception": ""
             },
             "error": null,
-            "id": "alpccyuhRdteET98/Tz1j3nwJa9UsqMROUnGLHVbFeI=",
+            "id": "wXFWFXaOQC2zmM1cwx3+2l1hZ+SicXjF0qFkLLjIC1k=",
             "jsonrpc": "2.0"
           }
         }
@@ -47,9 +47,9 @@
           "value": {
             "method": "erisdb.eventSubscribe",
             "params": {
-              "event_id": "Log/7EEC29E8914F55F08524BFB098E5EE8D6E339F8F"
+              "event_id": "Log/6CCF8406B21EC28F134E0E995B099D6F62F45AEF"
             },
-            "id": "1RQTFgNU1Bz43RH7SrVxHVqE1cITl2HUdW0h0SsbBm4=",
+            "id": "TwnoceFaXmxNWAxh80VRHxeWPwOU7C4n2kXNoc5dMzk=",
             "jsonrpc": "2.0"
           }
         }
@@ -59,10 +59,10 @@
           "done": false,
           "value": {
             "result": {
-              "sub_id": "C518BBB6489C2E0B00B5F5879F88AE0A2E16CC245CD9774D95E10795F2BE5F80"
+              "sub_id": "5F68F24017F930AE93FAE410813731463FD045DCF015D8DF6D989298FC30D363"
             },
             "error": null,
-            "id": "1RQTFgNU1Bz43RH7SrVxHVqE1cITl2HUdW0h0SsbBm4=",
+            "id": "TwnoceFaXmxNWAxh80VRHxeWPwOU7C4n2kXNoc5dMzk=",
             "jsonrpc": "2.0"
           }
         }
@@ -73,13 +73,13 @@
           "value": {
             "method": "erisdb.transactAndHold",
             "params": {
-              "priv_key": "50F4B08E1808256F74CAE5690206B2C98A65EEA3F6EE007BE3A4DD9E98DAB099DD42C7CF2BDD85ECD44C6C88328CAC4588B7B7A1A3CE6334750DC9D98919B63E",
-              "address": "7EEC29E8914F55F08524BFB098E5EE8D6E339F8F",
+              "priv_key": "AA7800EE1EBF2AD4127BB5CFCDC6ABBD3A005E357070FD8858F611AA2293807EDA0845B288BA544EBD95C3E3AB4B0DBA914A16C572174101C17B5873AFD00DDC",
+              "address": "6CCF8406B21EC28F134E0E995B099D6F62F45AEF",
               "data": "3bdab8bf",
               "gas_limit": 1000000,
               "fee": 0
             },
-            "id": "b6Fug4hvQVznxHn6KutqTnFu52Rpm2NqFTkkaf1KT3A=",
+            "id": "qKx3FHFjLQJjkG4WICBBUO0v0N37Dru6MasCt6s2bZg=",
             "jsonrpc": "2.0"
           }
         }
@@ -90,19 +90,19 @@
           "value": {
             "result": {
               "call_data": {
-                "caller": "C8BD5966B127AA8D84CA00B6E3FFCFE671ED4540",
-                "callee": "7EEC29E8914F55F08524BFB098E5EE8D6E339F8F",
+                "caller": "E31A431B158888A8C3A5E0E9EFE801EDC2B4432B",
+                "callee": "6CCF8406B21EC28F134E0E995B099D6F62F45AEF",
                 "data": "3BDAB8BF",
                 "value": 1,
                 "gas": 999968
               },
-              "origin": "C8BD5966B127AA8D84CA00B6E3FFCFE671ED4540",
-              "tx_id": "83E1296CE8033F30C095044A6461816F4998E950",
+              "origin": "E31A431B158888A8C3A5E0E9EFE801EDC2B4432B",
+              "tx_id": "16C0C4DD26CF58B1E605C880A3FF3EDC8FD12B4F",
               "return": "",
               "exception": ""
             },
             "error": null,
-            "id": "b6Fug4hvQVznxHn6KutqTnFu52Rpm2NqFTkkaf1KT3A=",
+            "id": "qKx3FHFjLQJjkG4WICBBUO0v0N37Dru6MasCt6s2bZg=",
             "jsonrpc": "2.0"
           }
         }
@@ -113,9 +113,9 @@
           "value": {
             "method": "erisdb.eventPoll",
             "params": {
-              "sub_id": "C518BBB6489C2E0B00B5F5879F88AE0A2E16CC245CD9774D95E10795F2BE5F80"
+              "sub_id": "5F68F24017F930AE93FAE410813731463FD045DCF015D8DF6D989298FC30D363"
             },
-            "id": "jFF9xSDD/3RDi9xHxKMv/OPXmXPVrg2ULVArmwNJRsQ=",
+            "id": "KEQ3EqTlOPqbvGTWNB29LSvMnogaCdfZNEu9YoeED2A=",
             "jsonrpc": "2.0"
           }
         }
@@ -127,36 +127,78 @@
             "result": {
               "events": [
                 {
-                  "address": "0000000000000000000000007EEC29E8914F55F08524BFB098E5EE8D6E339F8F",
+                  "address": "0000000000000000000000006CCF8406B21EC28F134E0E995B099D6F62F45AEF",
                   "topics": [
                     "57050AB73F6B9EBDD9F76B8D4997793F48CF956E965EE070551B9CA0BB71584E"
                   ],
                   "data": "",
-                  "height": 245
+                  "height": 234
                 }
               ]
             },
             "error": null,
-            "id": "jFF9xSDD/3RDi9xHxKMv/OPXmXPVrg2ULVArmwNJRsQ=",
+            "id": "KEQ3EqTlOPqbvGTWNB29LSvMnogaCdfZNEu9YoeED2A=",
             "jsonrpc": "2.0"
           }
         }
       }
     ]
   },
-  "validator": {
-    "address": "C8BD5966B127AA8D84CA00B6E3FFCFE671ED4540",
-    "pub_key": [
-      1,
-      "DD42C7CF2BDD85ECD44C6C88328CAC4588B7B7A1A3CE6334750DC9D98919B63E"
-    ],
-    "priv_key": [
-      1,
-      "50F4B08E1808256F74CAE5690206B2C98A65EEA3F6EE007BE3A4DD9E98DAB099DD42C7CF2BDD85ECD44C6C88328CAC4588B7B7A1A3CE6334750DC9D98919B63E"
-    ],
-    "last_height": 0,
-    "last_round": 0,
-    "last_step": 0
+  "initDir": {
+    "accounts.json": {
+      "test-_38_full_000": {
+        "address": "E31A431B158888A8C3A5E0E9EFE801EDC2B4432B",
+        "pubKey": "DA0845B288BA544EBD95C3E3AB4B0DBA914A16C572174101C17B5873AFD00DDC",
+        "privKey": "AA7800EE1EBF2AD4127BB5CFCDC6ABBD3A005E357070FD8858F611AA2293807EDA0845B288BA544EBD95C3E3AB4B0DBA914A16C572174101C17B5873AFD00DDC"
+      }
+    },
+    "genesis.json": {
+      "chain_id": "test-_38",
+      "accounts": [
+        {
+          "address": "E31A431B158888A8C3A5E0E9EFE801EDC2B4432B",
+          "amount": 99999999999999,
+          "name": "test-_38_full_000",
+          "permissions": {
+            "base": {
+              "perms": 16383,
+              "set": 16383
+            },
+            "roles": []
+          }
+        }
+      ],
+      "validators": [
+        {
+          "pub_key": [
+            1,
+            "DA0845B288BA544EBD95C3E3AB4B0DBA914A16C572174101C17B5873AFD00DDC"
+          ],
+          "name": "test-_38_full_000",
+          "amount": 9999999999,
+          "unbond_to": [
+            {
+              "address": "E31A431B158888A8C3A5E0E9EFE801EDC2B4432B",
+              "amount": 9999999999
+            }
+          ]
+        }
+      ]
+    },
+    "priv_validator.json": {
+      "address": "E31A431B158888A8C3A5E0E9EFE801EDC2B4432B",
+      "pub_key": [
+        1,
+        "DA0845B288BA544EBD95C3E3AB4B0DBA914A16C572174101C17B5873AFD00DDC"
+      ],
+      "priv_key": [
+        1,
+        "AA7800EE1EBF2AD4127BB5CFCDC6ABBD3A005E357070FD8858F611AA2293807EDA0845B288BA544EBD95C3E3AB4B0DBA914A16C572174101C17B5873AFD00DDC"
+      ],
+      "last_height": 0,
+      "last_round": 0,
+      "last_step": 0
+    }
   },
   "before": []
 }
