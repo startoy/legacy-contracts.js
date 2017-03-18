@@ -7,9 +7,9 @@ npm test
 
 if [ "$CIRCLE_BRANCH" = "master" ]; then
   # Install Docker Machine because CircleCI's Docker support is hobbled.
-  curl -L https://github.com/docker/machine/releases/download/$DOCKER_MACH\
-  INE_VERSION/docker-machine-`uname -s`-`uname -m` > $HOME/bin/docker-machi\
-  ne && chmod +x $HOME/bin/docker-machine
+  curl -L https://github.com/docker/machine/releases/download/\
+$DOCKER_MACHINE_VERSION/docker-machine-`uname -s`-`uname -m` > \
+$HOME/bin/docker-machine && chmod +x $HOME/bin/docker-machine
 
   docker-machine create --driver digitalocean default
   eval $(docker-machine env default)
@@ -20,9 +20,6 @@ if [ "$CIRCLE_BRANCH" = "master" ]; then
   sudo apt-get --quiet update
   sudo apt-get install --assume-yes --quiet eris
   eris init
-
-  # Make a blockchain for testing.
-  npm run make
 
   # Test Eris DB against our expectations of it.
   TEST=server npm test
