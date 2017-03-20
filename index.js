@@ -1,11 +1,11 @@
-var contractsModule = require('./lib/contractManager');
-var pipes = require('./lib/pipes/pipes');
-var utils = require('./lib/utils/utils');
-var edbModule = require('eris-db');
-var DevPipe = require('./lib/pipes/dev_pipe');
-var outputFormatters = require('./lib/output_formatters');
+var contractsModule = require('./lib/contractManager')
+var pipes = require('./lib/pipes/pipes')
+var utils = require('./lib/utils/utils')
+var edbModule = require('eris-db')
+var DevPipe = require('./lib/pipes/dev_pipe')
+var outputFormatters = require('./lib/output_formatters')
 
-var edb;
+var edb
 
 /**
  * Create a new solidity contracts object from the given pipe.
@@ -13,9 +13,9 @@ var edb;
  * @param pipe
  * @returns {*|contract}
  */
-exports.newContractManager = function(pipe){
-    return contractsModule.newContractManager(pipe);
-};
+exports.newContractManager = function (pipe) {
+  return contractsModule.newContractManager(pipe)
+}
 
 /**
  * Create a new solidity contracts object with a DevPipe from the given
@@ -24,11 +24,11 @@ exports.newContractManager = function(pipe){
  * @param {string} erisdbURL - The url to the eris-db server. Usually (http://localhost:1337/rpc)
  * @param {string} accounts - Used to pass in a list of accounts. NOTE: This is for DEV ONLY. The keys are not protected.
  */
-exports.newContractManagerDev = function(erisdbURL, accounts, options){
-    edb = edbModule.createInstance(erisdbURL, options);
-    var pipe = new DevPipe(edb, accounts);
-    return contractsModule.newContractManager(pipe);
-};
+exports.newContractManagerDev = function (erisdbURL, accounts, options) {
+  edb = edbModule.createInstance(erisdbURL, options)
+  var pipe = new DevPipe(edb, accounts)
+  return contractsModule.newContractManager(pipe)
+}
 
 /**
  * Create a new solidity contracts object from the given pipe.
@@ -37,10 +37,10 @@ exports.newContractManagerDev = function(erisdbURL, accounts, options){
  * @param pipe
  * @returns {*|contract}
  */
-exports.contracts = function(pipe){
-    contractsModule.init(pipe);
-    return contractsModule.contract;
-};
+exports.contracts = function (pipe) {
+  contractsModule.init(pipe)
+  return contractsModule.contract
+}
 
 /**
  * Create a new solidity contracts object with a DevPipe from the given
@@ -55,24 +55,24 @@ exports.contracts = function(pipe){
  * otherwise it is passed as the data param in the (normal error-first) callback.
  * @deprecated
  */
-exports.contractsDev = function(erisdbURL, privateKey, callback){
-    edb = edbModule.createInstance(erisdbURL);
-    var pipe = new DevPipe(edb, privateKey);
-    contractsModule.init(pipe);
-    var contract = contractsModule.contract;
+exports.contractsDev = function (erisdbURL, privateKey, callback) {
+  edb = edbModule.createInstance(erisdbURL)
+  var pipe = new DevPipe(edb, privateKey)
+  contractsModule.init(pipe)
+  var contract = contractsModule.contract
 
-    if(callback){
-        edb.start(function(error){
-            if(error){
-                callback(error);
-            } else {
-                callback(null, contract);
-            }
-        })
-    } else {
-        return contract;
-    }
-};
+  if (callback) {
+    edb.start(function (error) {
+      if (error) {
+        callback(error)
+      } else {
+        callback(null, contract)
+      }
+    })
+  } else {
+    return contract
+  }
+}
 
 /**
  * Get the eris-db instance.
@@ -81,25 +81,25 @@ exports.contractsDev = function(erisdbURL, privateKey, callback){
  * @returns {*}
  * @deprecated
  */
-exports.getErisDb = function(){
-    console.log("DEPRECATED: Access the eris-db instance through the contract manager instead.");
-    return edb;
-};
+exports.getErisDb = function () {
+  console.log('DEPRECATED: Access the eris-db instance through the contract manager instead.')
+  return edb
+}
 
-exports.pipes = pipes;
+exports.pipes = pipes
 
 /**
  * Utils has methods for working with strings.
  *
  * @type {{}}
  */
-exports.utils = {};
-exports.utils.hexToAscii = utils.hexToAscii;
-exports.utils.asciiToHex = utils.asciiToHex;
-exports.utils.padLeft = utils.padLeft;
-exports.utils.padRight = utils.padRight;
-exports.utils.htoa = utils.hexToAscii;
-exports.utils.atoh = utils.asciiToHex;
+exports.utils = {}
+exports.utils.hexToAscii = utils.hexToAscii
+exports.utils.asciiToHex = utils.asciiToHex
+exports.utils.padLeft = utils.padLeft
+exports.utils.padRight = utils.padRight
+exports.utils.htoa = utils.hexToAscii
+exports.utils.atoh = utils.asciiToHex
 
 /**
  * Output formatters are used to transform the output of contract transactions and calls.
@@ -140,35 +140,35 @@ exports.utils.atoh = utils.asciiToHex;
  *
  * @type {{}}
  */
-exports.outputFormatters = outputFormatters;
-exports.outputFormatters.paramsToJson = outputFormatters.valuesToJsonString(outputFormatters.jsonStrings);
+exports.outputFormatters = outputFormatters
+exports.outputFormatters.paramsToJson = outputFormatters.valuesToJsonString(outputFormatters.jsonStrings)
 
 /**
  * @deprecated
  */
-exports.solidityContracts = function(pipe){
-    contractsModule.init(pipe);
-    return contractsModule.contract;
-};
+exports.solidityContracts = function (pipe) {
+  contractsModule.init(pipe)
+  return contractsModule.contract
+}
 
 /**
  * @deprecated
  */
-exports.solidityContractsDev = function(erisdbURL, privateKey, callback){
-    var edb = edbModule.createInstance(erisdbURL);
-    var pipe = new DevPipe(edb, privateKey);
-    contractsModule.init(pipe);
-    var contract = contractsModule.contract;
+exports.solidityContractsDev = function (erisdbURL, privateKey, callback) {
+  var edb = edbModule.createInstance(erisdbURL)
+  var pipe = new DevPipe(edb, privateKey)
+  contractsModule.init(pipe)
+  var contract = contractsModule.contract
 
-    if(callback){
-        edb.start(function(error){
-            if(error){
-                callback(error);
-            } else {
-                callback(null, contract);
-            }
-        })
-    } else {
-        return contract;
-    }
-};
+  if (callback) {
+    edb.start(function (error) {
+      if (error) {
+        callback(error)
+      } else {
+        callback(null, contract)
+      }
+    })
+  } else {
+    return contract
+  }
+}

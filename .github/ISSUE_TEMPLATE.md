@@ -1,10 +1,14 @@
+# Library Issue or Support Request?
+
+This is the place to report any issues with the eris-contracts.js JavaScript library.  If you need help with your Solidity code, please see Monax's [Premium Support & Education](https://monax.io/packages/) offering.
+
 # Version Numbers
 
 Fill in version numbers below.
 
 * Node.js:
 * Eris CLI:
-* eris-contracts: 
+* eris-contracts:
 
 # Issue Description
 

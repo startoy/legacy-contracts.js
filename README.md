@@ -25,10 +25,6 @@ update it using [NodeSource's distribution](https://github.com/nodesource/distri
 $ npm install eris-contracts
 ```
 
-#### Yarn Warning
-
-We don't recommend installing the library using [Yarn](https://yarnpkg.com/) because [it ignores the `npm-shrinkwrap.json` file](https://github.com/yarnpkg/yarn/issues/838) and may install different versions of dependencies than the ones we've tested.
-
 ### eris-db server
 
 You need a running [eris-db](https://github.com/eris-ltd/eris-db) server. `eris-db` is a server wrapper for [Tendermint](https://github.com/tendermint/tendermint), which is the actual blockchain-client.
@@ -498,9 +494,33 @@ In `eris-contracts` you do not use watches and filters, but events. See the even
 
 Transacting and calling is done via the javascript contract objects, but the mechanics is slightly different. Ethereum keeps the accounts in the client, while our client (Tendermint) expects the account info, such as private keys or pre-signed transactions, to be provided by the caller. See the section on `pipes` for more info.
 
-## Tests
+## Testing
 
-`mocha` or `npm test`
+To test the library against pre-recorded vectors:
+
+```
+npm test
+```
+
+To test the library against Eris DB while recording vectors:
+
+```
+TEST=record npm test
+```
+
+To test Eris DB against pre-recorded vectors without exercising the library:
+
+```
+TEST=server npm test
+```
+
+## Debugging
+
+Debugging information will display on `stderr` if the library is run with `NODE_DEBUG=eris` in the environment.
+
+## Support
+
+If you would like help using this library to construct smart contract applications, please see Monax's [Premium Support & Education](https://monax.io/packages/) offering.
 
 ## Web3 licence
 

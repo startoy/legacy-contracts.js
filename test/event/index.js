@@ -3,52 +3,55 @@
 const assert = require('assert')
 const test = require('../../lib/test')
 
-const source = `
-  contract Contract {
-      event Event(
-          address from
-      );
+const vector = test.Vector()
 
-      function emit() {
-          Event(msg.sender);
-      }
-  }
-`
+before(vector.before(__dirname, {protocol: 'http:'}))
+after(vector.after())
 
-it('listens to an event from a contract', function (done) {
-  this.timeout(60 * 1000)
+it('listens to an event from a contract', vector.it(function (manager) {
+  this.timeout(10 * 1000)
 
-  test.newContractManager('blockchain', {protocol: 'http:'}).then((manager) =>
-    test.compile(manager, source, 'Contract').then((contract) => {
-      let count = 0
-      let subscription
+  const source = `
+    contract Contract {
+        event Event(
+            address from
+        );
 
+        function emit() {
+            Event(msg.sender);
+        }
+    }
+  `
+
+  return test.compile(manager, source, 'Contract').then((contract) => {
+    let count = 0
+    let subscription
+
+    return new Promise((resolve, reject) => {
       contract.Event(
         (error, subscriptionObject) => {
           if (error) {
-            done(error)
+            reject(error)
           } else {
             subscription = subscriptionObject
           }
         },
         (error, event) => {
           if (error) {
-            done(error)
+            reject(error)
           } else {
-            console.log('Received event', JSON.stringify(event, null, 2))
-
             try {
               assert.equal(event.args.from.length, 40)
             } catch (exception) {
               subscription.stop()
-              done(exception)
+              reject(exception)
             }
 
             count++
 
             if (count === 2) {
               subscription.stop()
-              done()
+              resolve()
             }
           }
         })
@@ -56,6 +59,5 @@ it('listens to an event from a contract', function (done) {
       contract.emit()
       contract.emit()
     })
-    .catch(done)
-  )
-})
+  })
+}))
