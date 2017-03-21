@@ -5,8 +5,6 @@ var edbModule = require('eris-db')
 var DevPipe = require('./lib/pipes/dev_pipe')
 var outputFormatters = require('./lib/output_formatters')
 
-var edb
-
 /**
  * Create a new solidity contracts object from the given pipe.
  *
@@ -25,8 +23,7 @@ exports.newContractManager = function (pipe) {
  * @param {string} accounts - Used to pass in a list of accounts. NOTE: This is for DEV ONLY. The keys are not protected.
  */
 exports.newContractManagerDev = function (erisdbURL, accounts, options) {
-  edb = edbModule.createInstance(erisdbURL, options)
-  var pipe = new DevPipe(edb, accounts)
+  var pipe = new DevPipe(edbModule.createInstance(erisdbURL, options), accounts)
   return contractsModule.newContractManager(pipe)
 }
 
@@ -56,7 +53,7 @@ exports.contracts = function (pipe) {
  * @deprecated
  */
 exports.contractsDev = function (erisdbURL, privateKey, callback) {
-  edb = edbModule.createInstance(erisdbURL)
+  const edb = edbModule.createInstance(erisdbURL)
   var pipe = new DevPipe(edb, privateKey)
   contractsModule.init(pipe)
   var contract = contractsModule.contract
@@ -72,18 +69,6 @@ exports.contractsDev = function (erisdbURL, privateKey, callback) {
   } else {
     return contract
   }
-}
-
-/**
- * Get the eris-db instance.
- *
- * TODO This might not be set if the user provides their own pipe. Need to remove this asap.
- * @returns {*}
- * @deprecated
- */
-exports.getErisDb = function () {
-  console.log('DEPRECATED: Access the eris-db instance through the contract manager instead.')
-  return edb
 }
 
 exports.pipes = pipes
