@@ -7,6 +7,7 @@ const test = require('../../lib/test')
 const vector = test.Vector()
 
 describe('issue #21', function () {
+  this.timeout(10 * 1000)
   let contract
 
   before(vector.before(__dirname, {protocol: 'http:'}, function (manager) {
