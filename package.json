@@ -31,7 +31,6 @@
     "jsdoc": "3.4.3",
     "mocha": "3.2.0",
     "mocha-circleci-reporter": "0.0.2",
-    "publish": "0.6.0",
     "request": "2.81.0",
     "request-promise": "4.1.1",
     "rewire": "2.5.2",
@@ -63,7 +62,6 @@
   },
   "scripts": {
     "doc": "jsdoc --configure JSDoc/conf.json --destination doc index.js lib README.md",
-    "publish": "bundle-dependencies update && publish",
     "precommit": "standard",
     "pretest": "standard",
     "test": "mocha --recursive --reporter mocha-circleci-reporter"
