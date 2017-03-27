@@ -10,9 +10,9 @@ describe('#45', function () {
   before(vector.before(__dirname, {protocol: 'http:'}))
   after(vector.after())
 
-  it('nottherealbatman', vector.it(function (manager) {
-    this.timeout(10 * 1000)
+  this.timeout(10 * 1000)
 
+  it('nottherealbatman', vector.it(function (manager) {
     const source = `
       contract Test {
 
@@ -46,8 +46,6 @@ describe('#45', function () {
   }))
 
   it('rguikers', vector.it(function (manager) {
-    this.timeout(10 * 1000)
-
     const source = `
       contract Test {
 
