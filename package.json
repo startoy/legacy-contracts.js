@@ -1,7 +1,7 @@
 {
   "name": "@monax/legacy-contracts",
   "description": "Library with javascript bindings for Solidity contracts.",
-  "version": "0.15.12",
+  "version": "0.16.0",
   "author": {
     "name": "Andreas Olofsson"
   },
