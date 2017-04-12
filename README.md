@@ -1,13 +1,31 @@
-# eris-contracts - the javascript contracts library.
+# @monax/legacy-contracts - the javascript contracts library.
 
 This library lets you create and interact with on-chain Solidity contracts from javascript. It is a port of Ethereums `web3.js` contracts section. What it does is it provides javascript versions of solidity contracts that can be used to call on-chain contracts from javascript.  
+
+## New Name
+
+This library used to be named `eris-contracts.js`.  It is now `@monax/legacy-contracts.js` as part of the company-wide renaming to Monax and also to distinguish it from the upcoming new client API.  Although it is a legacy API it will continue to be supported.
+
+To use new versions of the library in existing code, change the line in your `package.json` which looks like this:
+
+```
+"eris-contracts": "0.15.12",
+```
+
+to make it look like this:
+
+```
+"@monax/legacy-contracts": "0.16.0",
+```
+
+and run `npm install`.
 
 ## Installation
 
 ### Prerequisites
 
 * [Git](https://git-scm.com/)
-* [Monax Eris](https://monax.io/) version 0.12
+* [Monax](https://monax.io/) version 0.16
 * [Node.js](https://nodejs.org/) version 6 or higher
 
 You can check the installed version of Node.js with the command:
@@ -22,30 +40,30 @@ update it using [NodeSource's distribution](https://github.com/nodesource/distri
 ### To Install
 
 ```shell
-$ npm install eris-contracts
+$ npm install @monax/legacy-contracts
 ```
 
-### eris-db server
+### Burrow server
 
-You need a running [eris-db](https://github.com/eris-ltd/eris-db) server. `eris-db` is a server wrapper for [Tendermint](https://github.com/tendermint/tendermint), which is the actual blockchain-client.
+You need a running [Burrow](https://github.com/hyperledger/burrow) server. `Burrow` is a server wrapper for [Tendermint](https://github.com/tendermint/tendermint), which is the actual blockchain-client.
 
-#### Eris cli
+#### Monax cli
 
-The preferred method of configuring your blockchain and starting up the server will be [eris-cli](https://github.com/eris-ltd/eris-cli). It is currently in the last stages before public release. It runs eris-db/tendermint servers through docker.
+The preferred method of configuring your blockchain and starting up the server is [monax-cli](https://github.com/monax/cli).
 
 ## Usage
 
 To quickly set up a development/test-environment:
 
 ``` javascript
-var erisC = require('eris-contracts');
+var contracts = require('@monax/legacy-contracts');
 
-// URL to the rpc endpoint of the eris-db server.
-var erisdbURL = "http://localhost:1337/rpc";
+// URL to the rpc endpoint of the Burrow server.
+var burrowURL = "http://localhost:1337/rpc";
 // See the 'Private Keys and Signing' section below for more info on this.
 var accountData = require('/some/account/data.json');
 // newContractManagerDev lets you use an accountData object (address & private key) directly, i.e. no key/signing daemon is needed. This should only be used while developing/testing.
-var contractManager = erisC.newContractManagerDev(erisdbURL, accountData);
+var contractManager = contracts.newContractManagerDev(burrowURL, accountData);
 ```
 
 If using a websocket connection, you must add a callback to `newContractManagerDev`.
@@ -53,7 +71,7 @@ If using a websocket connection, you must add a callback to `newContractManagerD
 ``` javascript
 // ...
 var contractManager;
-erisC.newContractManagerDev(erisdbURL, PrivKey, function(error, _contractManager){
+contracts.newContractManagerDev(burrowURL, PrivKey, function(error, _contractManager){
     if(!error){
         // Server is ready.
         // ...
@@ -152,7 +170,7 @@ Finally, if you create a contract factory/template using an ABI, and the on-chai
 
 ## Private Keys and Signing
 
-Eris/Tendermint uses public key cryptography to protect the identity of the users/accounts. Each account has a public key and a private key. The public key (or public address, rather, which is a representation of the public key) is used to identify the account. It may be shown to others in plain-text.
+Burrow/Tendermint uses public key cryptography to protect the identity of the users/accounts. Each account has a public key and a private key. The public key (or public address, rather, which is a representation of the public key) is used to identify the account. It may be shown to others in plain-text.
 
 In order to transact from the account (which is required to actually do things), the account holder has to sign data using their private key. The private key should never be exposed to others.
 
@@ -164,46 +182,46 @@ Even if worthless/throw-away keys are used when developing and testing, it is ve
 
 ## API
 
-This is an overview and a short description of most objects. More details can be found in the code (jsdoc). This will later replace the current docs and tutorials on our [main site](https://erisindustries.com).
+This is an overview and a short description of most objects. More details can be found in the code (jsdoc). This will later replace the current docs and tutorials on our [main site](https://Monax.io).
 
-### eris-contracts (root module)
+### @monax/legacy-contracts (root module)
 
-Eris contracts is what you get when requiring `eris-contracts`. It's a wrapper around the `contract_manager` module with a few additional utilities. Here's the getting started example from above:
+Monax contracts is what you get when requiring `@monax/legacy-contracts`. It's a wrapper around the `contract_manager` module with a few additional utilities. Here's the getting started example from above:
 
 ``` javascript
-var erisC = require('eris-contracts');
-var erisdbURL = "http://localhost:1337/rpc";
+var contracts = require('@monax/legacy-contracts');
+var burrowURL = "http://localhost:1337/rpc";
 var accountData = require('/some/account/data.json');
-var contractManager = erisC.newContractManagerDev(erisdbURL, accountData);
+var contractManager = contracts.newContractManagerDev(burrowURL, accountData);
 ```
 
 The `newContractManagerDev` method is is just a convenient way of doing all of this:
 
 ``` javascript
-// Get 'eris-contracts'.
-var erisContracts = require('eris-contracts');
+// Get '@monax/legacy-contracts'.
+var contracts = require('@monax/legacy-contracts');
 
-// Get 'eris-db' (the javascript API for eris-db)
-var erisdbModule = require("eris-db");
+// Get '@monax/legacy-db' (the javascript API for Burrow)
+var burrowModule = require("@monax/legacy-db");
 
-// Create a new instance of ErisDB that uses the given URL.
-var erisdb = erisdbModule.createInstance("http://localhost:1337/rpc");
+// Create a new instance of Burrow that uses the given URL.
+var burrow = burrowModule.createInstance("http://localhost:1337/rpc");
 // The private key.
 var accountData = require('/some/account/data.json');
 
 // Create a new pipe.
-var pipe = new erisContracts.pipes.DevPipe(erisdb, accountData);
+var pipe = new contracts.pipes.DevPipe(burrow, accountData);
 // Create a new contracts object using that pipe.
-var contractManager = erisContracts.newContractManager(pipe);
+var contractManager = contracts.newContractManager(pipe);
 ```
 
 #### Pipes
 
-Pipes are used to connect `eris-contracts` with the `eris-db` javascript API. Th purpose of `pipes` is to enable multiple different ways of signing transactions. The `DevPipe` will take a private key which it sends to the server with each transaction so that the server can sign the transaction with the key. This should only be used in dev, or when the node.js server and blockchain client is running on the same machine or a private network.
+Pipes are used to connect `@monax/legacy-contracts` with the `Burrow` javascript API. Th purpose of `pipes` is to enable multiple different ways of signing transactions. The `DevPipe` will take a private key which it sends to the server with each transaction so that the server can sign the transaction with the key. This should only be used in dev, or when the node.js server and blockchain client is running on the same machine or a private network.
 
-LocalSignerPipe is for applications where end-users will sign transactions themselves using a key. A signing function can then be passed to a `LocalSignerPipe` and used by `eris-contract`. For now, `DevPipe` is the standard because **we do not yet have the infrastructure in place for local signing**.
+LocalSignerPipe is for applications where end-users will sign transactions themselves using a key. A signing function can then be passed to a `LocalSignerPipe` and used by `@monax/legacy-contract`. For now, `DevPipe` is the standard because **we do not yet have the infrastructure in place for local signing**.
 
-The pipes are available as `erisContracts.pipes`. It has the `DevPipe`, `LocalSignerPipe` and also the base `Pipe` class in case someone wants to extend it to create their own pipe.
+The pipes are available as `contracts.pipes`. It has the `DevPipe`, `LocalSignerPipe` and also the base `Pipe` class in case someone wants to extend it to create their own pipe.
 
 #### Accounts
 
@@ -282,7 +300,7 @@ var myContract = myContractFactory.at(address);
 ```
 
 **Note:** Use this with caution. There's no check if the address points to an actual contract, and if that contract is of the proper type. An existence check may be added later, but an ABI check will be harder since the ABI is not stored in the account that holds the compiled contract-code.
-A check that can be done manually is to first try and get the account at that address (using the core `eris-db.js` library). An even more sophisticated check would be to then get the code from that account and check if it matches the expected code for a contract of that particular type.
+A check that can be done manually is to first try and get the account at that address (using the core `@monax/legacy-db.js` library). An even more sophisticated check would be to then get the code from that account and check if it matches the expected code for a contract of that particular type.
 
 #### options
 
@@ -358,7 +376,7 @@ Constant functions can be evaluated without the caller having to sign anything u
 
 Currently, `constant` is not enforced by the compiler, but it will be. It is implemented on the javascript side though, and functions that are flagged as constant will be invoked using the `call` method of the RPC library rather then `transact`. `call` does not use the the private key and does not count towards the account nonce/sequence; it simply executes the code and passes any return value back at once.
 
-You may override this by using the `call` and `sendTransaction` methods, although that support may be removed. There is almost never a good reason to do this with `eris-contracts`.
+You may override this by using the `call` and `sendTransaction` methods, although that support may be removed. There is almost never a good reason to do this with `@monax/legacy-contracts`.
 
 These are examples of overriding the default behavior, and also examples of **what not to do**.
 
@@ -384,7 +402,7 @@ myContract.MyEvent(startCallback, eventCallback);
 
 The `startCallback` can be omitted to create a `once` subscription i.e. a subscription that will close down automatically when the first event is received. There's an alternative syntax for this as well which makes the intentions a bit more clear: `myContract.MyEvent.once(eventCallback)`.
 
-**Note**: If the backing `eris-db` object uses a websocket connection, events will come in as they happen. If it uses a HTTP connection then the subscription object will poll for events once every second (by default). It will then fire the callback once for each new event (if any), in the same order they came in. If you have lots of event activity and use HTTP, don't set the polling interval too high or you will have long periods of inactivity followed by a burst of new events.
+**Note**: If the backing `Burrow` object uses a websocket connection, events will come in as they happen. If it uses a HTTP connection then the subscription object will poll for events once every second (by default). It will then fire the callback once for each new event (if any), in the same order they came in. If you have lots of event activity and use HTTP, don't set the polling interval too high or you will have long periods of inactivity followed by a burst of new events.
 
 ##### The Event object
 
@@ -412,7 +430,7 @@ Event objects are on the following form:
 
 ##### The Subscription object
 
-A subscription object in `eris-contracts` is mostly just used to stop subscriptions. They are automatically started when created, and the eventId/subId is not needed either, so you mostly just use the `stop` method when working with `eris-contracts`.
+A subscription object in `@monax/legacy-contracts` is mostly just used to stop subscriptions. They are automatically started when created, and the eventId/subId is not needed either, so you mostly just use the `stop` method when working with `@monax/legacy-contracts`.
 
 `EventSub.stop(callback)`: stop subscribing. `callback(error)` is optional, and can be used to check for errors.
 
@@ -464,13 +482,13 @@ exports.stop = function(){
 
 ```
 
-## eris-contracts.js and web3.js (for Ethereum users)
+## @monax/legacy-contracts.js and web3.js (for Ethereum users)
 
-If you have done dapp-development with `web3.js`, you'll quickly learn how to use `eris-contracts.js`, but there are some important differences.
+If you have done dapp-development with `web3.js`, you'll quickly learn how to use `@monax/legacy-contracts.js`, but there are some important differences.
 
 ### Method callbacks
 
-You **must** use callbacks with `eris-contracts`. In `web3`, you may omit the callback and do a regular try-catch + return.
+You **must** use callbacks with `@monax/legacy-contracts`. In `web3`, you may omit the callback and do a regular try-catch + return.
 
 ``` javascript
 var sum;
@@ -484,11 +502,11 @@ try{
 }
 ```
 
-The reason is because they allow blocking http calls to be made. `eris-contracts` only works with `node.js` for now (mainly as server side script). This restriction might be removed when browser support is added.
+The reason is because they allow blocking http calls to be made. `@monax/legacy-contracts` only works with `node.js` for now (mainly as server side script). This restriction might be removed when browser support is added.
 
 ### Events
 
-In `eris-contracts` you do not use watches and filters, but events. See the event section above for instructions.
+In `@monax/legacy-contracts` you do not use watches and filters, but events. See the event section above for instructions.
 
 ### Transacting / calling
 
@@ -502,13 +520,13 @@ To test the library against pre-recorded vectors:
 npm test
 ```
 
-To test the library against Eris DB while recording vectors:
+To test the library against Burrow while recording vectors:
 
 ```
 TEST=record npm test
 ```
 
-To test Eris DB against pre-recorded vectors without exercising the library:
+To test Burrow against pre-recorded vectors without exercising the library:
 
 ```
 TEST=server npm test
@@ -516,7 +534,7 @@ TEST=server npm test
 
 ## Debugging
 
-Debugging information will display on `stderr` if the library is run with `NODE_DEBUG=eris` in the environment.
+Debugging information will display on `stderr` if the library is run with `NODE_DEBUG=monax` in the environment.
 
 ## Support
 

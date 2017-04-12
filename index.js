@@ -1,7 +1,7 @@
 var contractsModule = require('./lib/contractManager')
 var pipes = require('./lib/pipes/pipes')
 var utils = require('./lib/utils/utils')
-var edbModule = require('eris-db')
+var burrowModule = require('legacy-db')
 var DevPipe = require('./lib/pipes/dev_pipe')
 var outputFormatters = require('./lib/output_formatters')
 
@@ -19,11 +19,11 @@ exports.newContractManager = function (pipe) {
  * Create a new solidity contracts object with a DevPipe from the given
  * rpc-URL and private key.
  *
- * @param {string} erisdbURL - The url to the eris-db server. Usually (http://localhost:1337/rpc)
+ * @param {string} burrowURL - The url to the Burrow server. Usually (http://localhost:1337/rpc)
  * @param {string} accounts - Used to pass in a list of accounts. NOTE: This is for DEV ONLY. The keys are not protected.
  */
-exports.newContractManagerDev = function (erisdbURL, accounts, options) {
-  var pipe = new DevPipe(edbModule.createInstance(erisdbURL, options), accounts)
+exports.newContractManagerDev = function (burrowURL, accounts, options) {
+  var pipe = new DevPipe(burrowModule.createInstance(burrowURL, options), accounts)
   return contractsModule.newContractManager(pipe)
 }
 
@@ -43,8 +43,8 @@ exports.contracts = function (pipe) {
  * Create a new solidity contracts object with a DevPipe from the given
  * rpc-URL and private key.
  *
- * @param {string} erisdbURL - The url to the eris-db server. Usually (http://localhost:1337/rpc)
- * @param {string} privateKey - The 64 byte private key used to make transactions with eris-db/tendermint.
+ * @param {string} burrowURL - The url to the Burrow server. Usually (http://localhost:1337/rpc)
+ * @param {string} privateKey - The 64 byte private key used to make transactions with Burrow/tendermint.
  * NOTE: As always, as in every doc we ever write - don't pass private keys around if they actually protect
  * something. Only do it in testing where key is basically just a worthless bunch of bytes.
  * @param {function(error, data)} [callback] - Callback is only needed if using a websocket client. It will fire when
@@ -52,8 +52,8 @@ exports.contracts = function (pipe) {
  * otherwise it is passed as the data param in the (normal error-first) callback.
  * @deprecated
  */
-exports.contractsDev = function (erisdbURL, privateKey, callback) {
-  const edb = edbModule.createInstance(erisdbURL)
+exports.contractsDev = function (burrowURL, privateKey, callback) {
+  const edb = burrowModule.createInstance(burrowURL)
   var pipe = new DevPipe(edb, privateKey)
   contractsModule.init(pipe)
   var contract = contractsModule.contract
@@ -139,8 +139,8 @@ exports.solidityContracts = function (pipe) {
 /**
  * @deprecated
  */
-exports.solidityContractsDev = function (erisdbURL, privateKey, callback) {
-  var edb = edbModule.createInstance(erisdbURL)
+exports.solidityContractsDev = function (burrowURL, privateKey, callback) {
+  var edb = burrowModule.createInstance(burrowURL)
   var pipe = new DevPipe(edb, privateKey)
   contractsModule.init(pipe)
   var contract = contractsModule.contract

@@ -11,9 +11,9 @@ const web3 =
   '0x000000000000000000000000000000000000000000000000000000000000002A'
 
 it('converts a Monax hex string to a Web3 hex value', function () {
-  assert.equal(contractManager.__get__('erisToWeb3')(monax), web3)
+  assert.equal(contractManager.__get__('burrowToWeb3')(monax), web3)
 })
 
 it('converts a Web3 hex value to a Monax hex string', function () {
-  assert.equal(contractManager.__get__('web3ToEris')(web3), monax)
+  assert.equal(contractManager.__get__('web3ToBurrow')(web3), monax)
 })

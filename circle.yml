@@ -5,7 +5,6 @@ machine:
     version: 6.1.0
   environment:
     DOCKER_MACHINE_VERSION: "v0.10.0"
-    ERIS_PULL_APPROVE: true
     MOCHA_FILE: "$CIRCLE_TEST_REPORTS/test-results.xml"
 
 test:
@@ -24,4 +23,3 @@ deployment:
       - bundle-dependencies update
       - printf "$NPM_USERNAME\n$NPM_PASSWORD\n$NPM_EMAIL\n" | npm login
       - npm publish
-      - JSDoc/publish.sh

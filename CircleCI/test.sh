@@ -2,7 +2,7 @@
 set -o errexit
 set -o xtrace
 
-# Test against mock Eris DB.
+# Test against mock Burrow.
 npm test
 
 if [ "$CIRCLE_BRANCH" = "master" ]; then
@@ -14,13 +14,13 @@ $HOME/bin/docker-machine && chmod +x $HOME/bin/docker-machine
   docker-machine create --driver digitalocean default
   eval $(docker-machine env default)
 
-  # Install Eris CLI.
+  # Install Monax CLI.
   sudo add-apt-repository https://apt.monax.io
   curl -L https://apt.monax.io/APT-GPG-KEY | sudo apt-key add -
   sudo apt-get --quiet update
-  sudo apt-get install --assume-yes --quiet eris
-  eris init
+  sudo apt-get install --assume-yes --quiet monax
+  monax init --yes
 
-  # Test Eris DB against our expectations of it.
+  # Test Burrow against our expectations of it.
   TEST=server npm test
 fi

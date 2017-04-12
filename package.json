@@ -1,26 +1,25 @@
 {
-  "name": "eris-contracts",
+  "name": "@monax/legacy-contracts",
   "description": "Library with javascript bindings for Solidity contracts.",
-  "version": "0.15.12",
+  "version": "0.16.0",
   "author": {
-    "name": "Andreas Olofsson",
-    "email": "andreas@erisindustries.com"
+    "name": "Andreas Olofsson"
   },
   "bugs": {
-    "url": "https://github.com/eris-ltd/eris-contracts.js/issues"
+    "url": "https://github.com/monax/legacy-contracts.js/issues"
   },
   "dependencies": {
+    "@monax/legacy-db": "0.16.0",
     "@nodeguy/generic": "3.0.0",
     "@nodeguy/type": "0.2.0",
     "bignumber.js": "debris/bignumber.js#94d7146671b9719e00a09c29b01a691bc85048c2",
     "bluebird": "3.5.0",
     "crypto-js": "3.1.4",
-    "eris-db": "0.15.12",
     "g-functions": "0.3.0",
     "iteray": "0.5.1",
     "ramda": "0.23.0",
     "utf8": "2.1.2",
-    "web3": "eris-ltd/web3.js#aa280b4e3d3ab35507d833dab0b841410f5e4f1d"
+    "web3": "monax/web3.js#aa280b4e3d3ab35507d833dab0b841410f5e4f1d"
   },
   "devDependencies": {
     "@nodeguy/assert": "0.1.1",
@@ -31,7 +30,6 @@
     "jsdoc": "3.4.3",
     "mocha": "3.2.0",
     "mocha-circleci-reporter": "0.0.2",
-    "publish": "0.6.0",
     "request": "2.81.0",
     "request-promise": "4.1.1",
     "rewire": "2.5.2",
@@ -42,11 +40,11 @@
   "engines": {
     "node": ">=6"
   },
-  "homepage": "https://github.com/eris-ltd/eris-contracts.js",
+  "homepage": "https://github.com/monax/legacy-contracts.js",
   "keywords": [
+    "Burrow",
+    "Hyperledger",
     "Monax",
-    "eris",
-    "eris-db",
     "solidity"
   ],
   "license": "LGPL-3.0",
@@ -59,11 +57,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/eris-ltd/eris-contracts.js"
+    "url": "https://github.com/monax/legacy-contracts.js"
   },
   "scripts": {
     "doc": "jsdoc --configure JSDoc/conf.json --destination doc index.js lib README.md",
-    "publish": "bundle-dependencies update && publish",
     "precommit": "standard",
     "pretest": "standard",
     "test": "mocha --recursive --reporter mocha-circleci-reporter"

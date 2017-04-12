@@ -5,15 +5,15 @@
         "input": {
           "done": false,
           "value": {
-            "method": "erisdb.transactAndHold",
+            "method": "burrow.transactAndHold",
             "params": {
-              "priv_key": "E0F0CDAB26A96B6FF14940028D6B1EC1560DBD68BC05E8CC55E3E21AE9D48DDF3B5A4D4E4A304917DF5EDDEC39FB362010D7C7963CB7592475702471AF939B32",
+              "priv_key": "4C217EBBCFE62EDBA76E83807C4F786528427088BFF3B88DA4C4558AF819AEBD845C41BB7F465C0B8F0C744A070AA9B9E0F32223746EC6EF45FD43D9609DE504",
               "address": "",
               "data": "6060604052608d8060106000396000f3606060405260e060020a600035046338cc48318114602e578063c4b0fbb1146035578063f2c9ecd814605b575b005b6063305b90565b606430606091825273ffffffffffffffffffffffffffffffffffffffff16608052604090f35b608360646032565b73ffffffffffffffffffffffffffffffffffffffff166060908152602090f35b6060908152602090f3",
               "gas_limit": 1000000,
               "fee": 0
             },
-            "id": "YV30CPTs/upwdbpIrlmKc2HWrVv5gjLRapM/YdeOya4=",
+            "id": "9UpzUf8JbMb9jVP+ANChZ7jbUWt76bkvfhiyR0TNHV0=",
             "jsonrpc": "2.0"
           }
         }
@@ -24,19 +24,18 @@
           "value": {
             "result": {
               "call_data": {
-                "caller": "0F418668A7576B96A47B8107C4B83FD2AD4BE80C",
-                "callee": "EDF80B2DDAFB15D1B7793BBF4857CAE4F660FF79",
+                "caller": "8EEF59C6A2A84863BE06B54A11B6088E3F634F6D",
+                "callee": "688EDEB17205CAA18BB35F38AC4A832D4E75DB77",
                 "data": "6060604052608D8060106000396000F3606060405260E060020A600035046338CC48318114602E578063C4B0FBB1146035578063F2C9ECD814605B575B005B6063305B90565B606430606091825273FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF16608052604090F35B608360646032565B73FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF166060908152602090F35B6060908152602090F3",
                 "value": 1,
                 "gas": 999985
               },
-              "origin": "0F418668A7576B96A47B8107C4B83FD2AD4BE80C",
-              "tx_id": "2A95E6C3E440B76BFC8B785DA0065391CFCF5F22",
+              "origin": "8EEF59C6A2A84863BE06B54A11B6088E3F634F6D",
+              "tx_id": "59A1D53CF3E4BD1E054D7F345E93B85791661E31",
               "return": "606060405260E060020A600035046338CC48318114602E578063C4B0FBB1146035578063F2C9ECD814605B575B005B6063305B90565B606430606091825273FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF16608052604090F35B608360646032565B73FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF166060908152602090F35B6060908152602090F3",
               "exception": ""
             },
-            "error": null,
-            "id": "YV30CPTs/upwdbpIrlmKc2HWrVv5gjLRapM/YdeOya4=",
+            "id": "9UpzUf8JbMb9jVP+ANChZ7jbUWt76bkvfhiyR0TNHV0=",
             "jsonrpc": "2.0"
           }
         }
@@ -45,15 +44,15 @@
         "input": {
           "done": false,
           "value": {
-            "method": "erisdb.transactAndHold",
+            "method": "burrow.transactAndHold",
             "params": {
-              "priv_key": "E0F0CDAB26A96B6FF14940028D6B1EC1560DBD68BC05E8CC55E3E21AE9D48DDF3B5A4D4E4A304917DF5EDDEC39FB362010D7C7963CB7592475702471AF939B32",
-              "address": "EDF80B2DDAFB15D1B7793BBF4857CAE4F660FF79",
+              "priv_key": "4C217EBBCFE62EDBA76E83807C4F786528427088BFF3B88DA4C4558AF819AEBD845C41BB7F465C0B8F0C744A070AA9B9E0F32223746EC6EF45FD43D9609DE504",
+              "address": "688EDEB17205CAA18BB35F38AC4A832D4E75DB77",
               "data": "c4b0fbb1",
               "gas_limit": 1000000,
               "fee": 0
             },
-            "id": "ARrtPZIgx/+xku5zmAgIkbE4oA3HP24CjUBYVaLX8LU=",
+            "id": "SunpfL1shYBBGKx+F90ZbikeTC3wrd2Y4IcGIwXGSYw=",
             "jsonrpc": "2.0"
           }
         }
@@ -64,19 +63,18 @@
           "value": {
             "result": {
               "call_data": {
-                "caller": "0F418668A7576B96A47B8107C4B83FD2AD4BE80C",
-                "callee": "EDF80B2DDAFB15D1B7793BBF4857CAE4F660FF79",
+                "caller": "8EEF59C6A2A84863BE06B54A11B6088E3F634F6D",
+                "callee": "688EDEB17205CAA18BB35F38AC4A832D4E75DB77",
                 "data": "C4B0FBB1",
                 "value": 1,
                 "gas": 999948
               },
-              "origin": "0F418668A7576B96A47B8107C4B83FD2AD4BE80C",
-              "tx_id": "A301DE95507EEE073EEAA97B09A8B3B445AD2FB8",
-              "return": "0000000000000000000000000000000000000000000000000000000000000064000000000000000000000000EDF80B2DDAFB15D1B7793BBF4857CAE4F660FF79",
+              "origin": "8EEF59C6A2A84863BE06B54A11B6088E3F634F6D",
+              "tx_id": "BE8ED2EC45D9678E4F3E63BAB5CD7739E43EC1DD",
+              "return": "0000000000000000000000000000000000000000000000000000000000000064000000000000000000000000688EDEB17205CAA18BB35F38AC4A832D4E75DB77",
               "exception": ""
             },
-            "error": null,
-            "id": "ARrtPZIgx/+xku5zmAgIkbE4oA3HP24CjUBYVaLX8LU=",
+            "id": "SunpfL1shYBBGKx+F90ZbikeTC3wrd2Y4IcGIwXGSYw=",
             "jsonrpc": "2.0"
           }
         }
@@ -84,18 +82,21 @@
     ]
   },
   "initDir": {
-    "accounts.json": {
-      "test-_48_full_000": {
-        "address": "0F418668A7576B96A47B8107C4B83FD2AD4BE80C",
-        "pubKey": "3B5A4D4E4A304917DF5EDDEC39FB362010D7C7963CB7592475702471AF939B32",
-        "privKey": "E0F0CDAB26A96B6FF14940028D6B1EC1560DBD68BC05E8CC55E3E21AE9D48DDF3B5A4D4E4A304917DF5EDDEC39FB362010D7C7963CB7592475702471AF939B32"
-      }
-    },
     "genesis.json": {
+      "genesis_time": "2017-04-12T08:47:42.501Z",
       "chain_id": "test-_48",
+      "params": {
+        "global_permissions": {
+          "base": {
+            "perms": 2302,
+            "set": 16383
+          },
+          "roles": []
+        }
+      },
       "accounts": [
         {
-          "address": "0F418668A7576B96A47B8107C4B83FD2AD4BE80C",
+          "address": "8EEF59C6A2A84863BE06B54A11B6088E3F634F6D",
           "amount": 99999999999999,
           "name": "test-_48_full_000",
           "permissions": {
@@ -111,13 +112,13 @@
         {
           "pub_key": [
             1,
-            "3B5A4D4E4A304917DF5EDDEC39FB362010D7C7963CB7592475702471AF939B32"
+            "845C41BB7F465C0B8F0C744A070AA9B9E0F32223746EC6EF45FD43D9609DE504"
           ],
-          "name": "test-_48_full_000",
           "amount": 9999999999,
+          "name": "test-_48_full_000",
           "unbond_to": [
             {
-              "address": "0F418668A7576B96A47B8107C4B83FD2AD4BE80C",
+              "address": "8EEF59C6A2A84863BE06B54A11B6088E3F634F6D",
               "amount": 9999999999
             }
           ]
@@ -125,14 +126,14 @@
       ]
     },
     "priv_validator.json": {
-      "address": "0F418668A7576B96A47B8107C4B83FD2AD4BE80C",
+      "address": "8EEF59C6A2A84863BE06B54A11B6088E3F634F6D",
       "pub_key": [
         1,
-        "3B5A4D4E4A304917DF5EDDEC39FB362010D7C7963CB7592475702471AF939B32"
+        "845C41BB7F465C0B8F0C744A070AA9B9E0F32223746EC6EF45FD43D9609DE504"
       ],
       "priv_key": [
         1,
-        "E0F0CDAB26A96B6FF14940028D6B1EC1560DBD68BC05E8CC55E3E21AE9D48DDF3B5A4D4E4A304917DF5EDDEC39FB362010D7C7963CB7592475702471AF939B32"
+        "4C217EBBCFE62EDBA76E83807C4F786528427088BFF3B88DA4C4558AF819AEBD845C41BB7F465C0B8F0C744A070AA9B9E0F32223746EC6EF45FD43D9609DE504"
       ],
       "last_height": 0,
       "last_round": 0,
