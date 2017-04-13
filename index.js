@@ -1,7 +1,7 @@
 var contractsModule = require('./lib/contractManager')
 var pipes = require('./lib/pipes/pipes')
 var utils = require('./lib/utils/utils')
-var burrowModule = require('legacy-db')
+var burrowModule = require('@monax/legacy-db')
 var DevPipe = require('./lib/pipes/dev_pipe')
 var outputFormatters = require('./lib/output_formatters')
 
