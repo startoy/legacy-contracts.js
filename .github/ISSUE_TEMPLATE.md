@@ -1,3 +1,7 @@
+# This Template is Important!
+
+Please fill out all sections of this template if you would like us to consider your issue, otherwise we may close it without comment.  By filling out the template you make the most efficient use of our time so that we can support you!  Win, win!
+
 # Library Issue or Support Request?
 
 This is the place to report any issues with the @monax/legacy-contracts.js JavaScript library.  If you need help with your Solidity code, please see Monax's [Premium Support & Education](https://monax.io/packages/) offering.
