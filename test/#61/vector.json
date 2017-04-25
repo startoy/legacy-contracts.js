@@ -7,13 +7,13 @@
           "value": {
             "method": "burrow.transactAndHold",
             "params": {
-              "priv_key": "9496A580D327201796838D29F9CD17500ED42AE7C72BE1DD0ECD42586ACDE39F66DE242CBFAB1B7A16B9E72369AA468083A39F224040E6764C94604E7F11FD47",
+              "priv_key": "1396CD38C1F81A509EC8DF7ED1789F37DFC40DB8EEEB907CB0B0442273B444C4422C8C4D0727A87930C64CD3786AC35D3C85FFD92FFD123C1F9C58B5EB522CC6",
               "address": "",
               "data": "6060604052604051602080607183395060806040525160008054600160a060020a0319168217905550603d8060346000396000f3606060405260e060020a60003504636d4ce63c8114601a575b005b60005473ffffffffffffffffffffffffffffffffffffffff166060908152602090f300000000000000000000000088977a37d05a4fe86d09e88c88a49c2fcf7d6d8f",
               "gas_limit": 1000000,
-              "fee": 0
+              "fee": 1
             },
-            "id": "UDV+25GWAYRP3DrT3p7D6j+FqzH0sLpIDln4WKM+5lk=",
+            "id": "Yki6cvdbpvcKjplkIZb6buomk+zMJCE0ZXZxQDTFHTU=",
             "jsonrpc": "2.0"
           }
         }
@@ -24,18 +24,18 @@
           "value": {
             "result": {
               "call_data": {
-                "caller": "65E9F8AC7D9E6C63C893E27F278E4835BA868164",
-                "callee": "482D355328FEAF44F7930691905139C65913FB8D",
+                "caller": "FA12A461E13188829DD1C43D72170A9036193876",
+                "callee": "F2C3813EDB1A0E992B3B85C260FDC7D785A73AAB",
                 "data": "6060604052604051602080607183395060806040525160008054600160A060020A0319168217905550603D8060346000396000F3606060405260E060020A60003504636D4CE63C8114601A575B005B60005473FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF166060908152602090F300000000000000000000000088977A37D05A4FE86D09E88C88A49C2FCF7D6D8F",
-                "value": 1,
+                "value": 0,
                 "gas": 999937
               },
-              "origin": "65E9F8AC7D9E6C63C893E27F278E4835BA868164",
-              "tx_id": "BD32358D5E31E98E10531F5278CFB2854A6D871A",
+              "origin": "FA12A461E13188829DD1C43D72170A9036193876",
+              "tx_id": "BD8AB4870E41F6E099197D7128892AAA4931235C",
               "return": "606060405260E060020A60003504636D4CE63C8114601A575B005B60005473FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF166060908152602090F3",
               "exception": ""
             },
-            "id": "UDV+25GWAYRP3DrT3p7D6j+FqzH0sLpIDln4WKM+5lk=",
+            "id": "Yki6cvdbpvcKjplkIZb6buomk+zMJCE0ZXZxQDTFHTU=",
             "jsonrpc": "2.0"
           }
         }
@@ -46,11 +46,11 @@
           "value": {
             "method": "burrow.call",
             "params": {
-              "from": "65E9F8AC7D9E6C63C893E27F278E4835BA868164",
-              "address": "482D355328FEAF44F7930691905139C65913FB8D",
+              "from": "FA12A461E13188829DD1C43D72170A9036193876",
+              "address": "F2C3813EDB1A0E992B3B85C260FDC7D785A73AAB",
               "data": "6d4ce63c"
             },
-            "id": "9h2GLxJA+zHBPL+6GZJRAs+Si8nHi0CY7fTkIlmv6ng=",
+            "id": "64NBp97Kke57Qj9G/s/aR7sWNnEru5VVDiUoCZHzmmw=",
             "jsonrpc": "2.0"
           }
         }
@@ -63,7 +63,7 @@
               "return": "00000000000000000000000088977a37d05a4fe86d09e88c88a49c2fcf7d6d8f",
               "gas_used": 41
             },
-            "id": "9h2GLxJA+zHBPL+6GZJRAs+Si8nHi0CY7fTkIlmv6ng=",
+            "id": "64NBp97Kke57Qj9G/s/aR7sWNnEru5VVDiUoCZHzmmw=",
             "jsonrpc": "2.0"
           }
         }
@@ -72,7 +72,7 @@
   },
   "initDir": {
     "genesis.json": {
-      "genesis_time": "2017-04-12T08:48:38.956Z",
+      "genesis_time": "2017-04-25T05:24:51.917Z",
       "chain_id": "test-_61",
       "params": {
         "global_permissions": {
@@ -85,7 +85,7 @@
       },
       "accounts": [
         {
-          "address": "65E9F8AC7D9E6C63C893E27F278E4835BA868164",
+          "address": "FA12A461E13188829DD1C43D72170A9036193876",
           "amount": 99999999999999,
           "name": "test-_61_full_000",
           "permissions": {
@@ -101,13 +101,13 @@
         {
           "pub_key": [
             1,
-            "66DE242CBFAB1B7A16B9E72369AA468083A39F224040E6764C94604E7F11FD47"
+            "422C8C4D0727A87930C64CD3786AC35D3C85FFD92FFD123C1F9C58B5EB522CC6"
           ],
           "amount": 9999999999,
           "name": "test-_61_full_000",
           "unbond_to": [
             {
-              "address": "65E9F8AC7D9E6C63C893E27F278E4835BA868164",
+              "address": "FA12A461E13188829DD1C43D72170A9036193876",
               "amount": 9999999999
             }
           ]
@@ -115,14 +115,14 @@
       ]
     },
     "priv_validator.json": {
-      "address": "65E9F8AC7D9E6C63C893E27F278E4835BA868164",
+      "address": "FA12A461E13188829DD1C43D72170A9036193876",
       "pub_key": [
         1,
-        "66DE242CBFAB1B7A16B9E72369AA468083A39F224040E6764C94604E7F11FD47"
+        "422C8C4D0727A87930C64CD3786AC35D3C85FFD92FFD123C1F9C58B5EB522CC6"
       ],
       "priv_key": [
         1,
-        "9496A580D327201796838D29F9CD17500ED42AE7C72BE1DD0ECD42586ACDE39F66DE242CBFAB1B7A16B9E72369AA468083A39F224040E6764C94604E7F11FD47"
+        "1396CD38C1F81A509EC8DF7ED1789F37DFC40DB8EEEB907CB0B0442273B444C4422C8C4D0727A87930C64CD3786AC35D3C85FFD92FFD123C1F9C58B5EB522CC6"
       ],
       "last_height": 0,
       "last_round": 0,
