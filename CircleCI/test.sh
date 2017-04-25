@@ -15,8 +15,8 @@ $HOME/bin/docker-machine && chmod +x $HOME/bin/docker-machine
   eval $(docker-machine env default)
 
   # Install Monax CLI.
-  sudo add-apt-repository https://apt.monax.io
-  curl -L https://apt.monax.io/APT-GPG-KEY | sudo apt-key add -
+  sudo add-apt-repository https://pkgs.monax.io/apt
+  curl -L https://pkgs.monax.io/apt/APT-GPG-KEY | sudo apt-key add -
   sudo apt-get --quiet update
   sudo apt-get install --assume-yes --quiet monax
   monax init --yes
