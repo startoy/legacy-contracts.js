@@ -1,7 +1,7 @@
 {
   "name": "@monax/legacy-contracts",
   "description": "Library with javascript bindings for Solidity contracts.",
-  "version": "0.16.3",
+  "version": "0.16.4",
   "author": {
     "name": "Andreas Olofsson"
   },
@@ -19,7 +19,7 @@
     "iteray": "0.5.1",
     "ramda": "0.23.0",
     "utf8": "2.1.2",
-    "web3": "monax/web3.js#aa280b4e3d3ab35507d833dab0b841410f5e4f1d"
+    "web3": "monax/web3.js#957c3219995fdc6a99ce70443fae1c8ebc7f1a8f"
   },
   "devDependencies": {
     "@nodeguy/assert": "0.1.1",
