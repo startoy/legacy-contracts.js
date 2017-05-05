@@ -1,3 +1,6 @@
+// This test fails because of a Burrow bug:
+// https://github.com/hyperledger/burrow/issues/300
+
 'use strict'
 
 const assert = require('assert')

@@ -2,6 +2,8 @@
 set -o errexit
 set -o xtrace
 
+# Configure Go environment variables.
+
 export GOPATH=$HOME/go
 mkdir $GOPATH
 
