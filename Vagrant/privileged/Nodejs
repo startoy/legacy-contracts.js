@@ -2,6 +2,8 @@
 set -o errexit
 set -o xtrace
 
+# Install Node.js.
+
 # https://github.com/nodesource/distributions#debmanual
 
 curl --silent https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -

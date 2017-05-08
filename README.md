@@ -540,6 +540,10 @@ Debugging information will display on `stderr` if the library is run with `NODE_
 
 If you would like help using this library to construct smart contract applications, please see Monax's [Premium Support & Education](https://monax.io/packages/) offering.
 
+## Publishing
+
+To publish a new version on [NPM](https://www.npmjs.com/), push it to `master`.  If the tests pass on CircleCI then it will be published automatically.
+
 ## Web3 licence
 
 This library is built on [web3.js](https://github.com/ethereum/web3.js). Here is the web3.js licence:

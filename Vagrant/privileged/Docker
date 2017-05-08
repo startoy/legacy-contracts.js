@@ -2,6 +2,8 @@
 set -o errexit
 set -o xtrace
 
+# Install Docker.
+
 # https://docs.docker.com/engine/installation/linux/debian/
 
 sudo apt-get install -y --no-install-recommends \

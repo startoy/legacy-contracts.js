@@ -1,3 +1,6 @@
+// WebSocket is disabled until Burrow complies with JSON-RPC.  See:
+// https://github.com/hyperledger/burrow/issues/355
+
 'use strict'
 
 const assert = require('assert')
